@@ -79,20 +79,18 @@ body {
 
 .welkom {
     float: right;
-    width: 30%;
+    width: 50%;
     height: 300px;
     background: black;
     color: white;
-    padding: 10px;
 }
 
 .haha {
     float: left;
-    width: 70%;
+    width: 50%;
     height: 300px;
     background-color: blueviolet;
     color: red;
-    padding: 10px;
 }
 
 .footer {
