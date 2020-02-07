@@ -9,8 +9,7 @@ body {
   }
   .container {
     padding: 0 20px;
-    max-width: 960px;
-    margin: 0 auto;
+    max-width: auto;
   }
   .logo-box {
     float: left;
@@ -84,6 +83,7 @@ body {
     height: 300px;
     background: black;
     color: white;
+    padding: 10px;
 }
 
 .haha {
@@ -92,6 +92,7 @@ body {
     height: 300px;
     background-color: blueviolet;
     color: red;
+    padding: 10px;
 }
 
 .footer {
