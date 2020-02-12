@@ -110,7 +110,6 @@ body {
     text-align: center;
  }
 
-<<<<<<< HEAD
  /* tablet & mobile devices */
  @media screen and (max-width: 660px) {
   header {text-align: center;}
@@ -144,15 +143,12 @@ nav a:after {content: none;}
   margin: 40px;
 }
 
-
-=======
- .normal_section{
+.normal_section{
    text-align: left;
    position: relative;
    left: 30px;
    word-wrap: normal;
  }
->>>>>>> 8ed704a339a0ab7a7d04d9230576f686293da81c
 
  
  
