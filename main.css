@@ -24,14 +24,11 @@ body {
     overflow: hidden;
   }
   ul {
-<<<<<<< HEAD
     list-style: none;
     margin: 10px;
     padding: 0;
-=======
     margin: 0;
     padding: 15px;
->>>>>>> 8431725970c77567f19fb4fbcbc617636cd76a2f
     float: inline-start;
   }
 
@@ -114,16 +111,19 @@ body {
     text-align: center;
  }
 
-<<<<<<< HEAD
- .normal_section{
-  text-align: left;
-  position: relative;  
-  margin: 25px 0 0 30px;
-  word-wrap: normal;
+ .content {
+  margin: 20px;
 }
+
+.normal_section{
+   text-align: left;
+   position: relative;
+   word-wrap: normal;
+   margin: 20px;
+ }
+
  
  
-=======
  /* tablet & mobile devices */
  @media screen and (max-width: 660px) {
   header {text-align: center;}
@@ -153,17 +153,25 @@ nav a:after {content: none;}
   .right-side {float: left; width: 100%; padding-top: 20px;}
 }
 
-.content {
-  margin: 40px;
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0px 0px 0px;
+  text-align: left;
 }
 
-.normal_section{
-   text-align: left;
-   position: relative;
-   left: 30px;
-   word-wrap: normal;
- }
->>>>>>> 8431725970c77567f19fb4fbcbc617636cd76a2f
+td{
+  height: 40px;
+  padding-left: 30px;
+}
+th{
+  padding: 20px 30px 20px 30px;
+  background-color: rgb(209, 232, 240) ;
 
- 
- 
+}
+tr:nth-child(even){
+  background-color: rgb(209, 232, 240);
+}
+tr:hover{
+  background-color: #f5f5f5;
+}
