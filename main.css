@@ -144,8 +144,8 @@ nav a:after {content: none;}
 .normal_section{
    text-align: left;
    position: relative;
-   left: 30px;
    word-wrap: normal;
+   margin: 0;
  }
 
  
