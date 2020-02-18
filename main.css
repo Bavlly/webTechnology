@@ -67,14 +67,12 @@ body {
 .right-side {
     float: right;
     width: 50%;
-    height: 300px;
     color: black;
 }
 
 .left-side {
     float: left;
     width: 50%;
-    height: 300px;
     color: black;
 }
 
