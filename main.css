@@ -35,7 +35,7 @@ body {
   .navbar {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10;
     float: right;
 
   }
@@ -65,28 +65,6 @@ body {
   }
   nav a:hover:after {width: 100%;}
   
-  @media screen and (max-width: 660px) {
-    header {text-align: center;}
-    .logo-box {
-      float: none;
-      display: inline-block;
-      margin: 0 0 16px 0;
-    }
-    ul {float: none;}
-    nav li:first-of-type {margin-left: 0;}
-  }
-  @media screen and (max-width: 550px) {
-  nav {overflow: visible;}
-  nav li {
-    display: block;
-    margin: 0;
-    height: 40px;
-    line-height: 40px;
-  }
-  nav li:hover {background: rgba(0,0,0,.1);}
-  nav a:after {content: none;}
-  }
-
 .right-side {
     float: right;
     width: 50%;
@@ -122,8 +100,6 @@ body {
    margin: 20px;
  }
 
- 
- 
  /* tablet & mobile devices */
  @media screen and (max-width: 660px) {
   header {text-align: center;}
@@ -135,7 +111,17 @@ body {
   ul {float: none;}
   nav li:first-of-type {margin-left: 0;}
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 250px) {
+  header {text-align: center;}
+  .logo-box {
+    float: none;
+    display: inline-block;
+    margin: 0 0 16px 0;
+  }
+  ul {float: none;}
+  nav li:first-of-type {margin-left: 0;}
+}
+@media screen and (max-width: 100px) {
 nav {overflow: visible;}
 nav li {
   display: block;
@@ -143,7 +129,6 @@ nav li {
   height: 40px;
   line-height: 40px;
 }
-
 nav li:hover {background: rgba(0,0,0,.1);}
 nav a:after {content: none;}
 }
@@ -153,6 +138,8 @@ nav a:after {content: none;}
   .right-side {float: left; width: 100%; padding-top: 20px;}
 }
 
+
+/* table schedule */
 table{
   width: 100%;
   border-collapse: collapse;
