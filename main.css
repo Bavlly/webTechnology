@@ -74,10 +74,10 @@ main {
   width:auto; 
   height:100px
 }
-.latest_news {
+.latest-news {
   padding-left: 20px;
 }
-.normal_section{
+.normal-section{
   text-align: left;
   position: relative;
   word-wrap: normal;
