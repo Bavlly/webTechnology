@@ -70,6 +70,9 @@ nav a:hover:after {width: 100%;}
 main {
   margin: 20px;
 }
+a{
+  color: #73685d;;
+}
 .logo {
   width:auto; 
   height:100px
@@ -143,21 +146,57 @@ nav a:after {content: none;}
   .right-side {float: left; width: 100%; padding-top: 20px;}
 }
 
-/* table schedule */
+/* table schedule for smaller screens */
+@media screen and (max-width: 768px){
+  table,thead,tbody,th,td,tr {
+    display: block;
+  }
+
+  th {
+    text-align: right;
+    background-color: #f0f2ed;
+  }
+
+  
+  table{
+    width: 100%;
+    position:relative;
+    padding-bottom: 20px;
+    border-collapse: collapse;    
+  }
+
+  thead{
+    float:left;
+    white-space: nowrap;
+  }
+  
+  tbody{
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap; 
+  }
+
+  tr{
+   display: inline-block;
+   vertical-align: middle;
+  }
+}
+/* table schedule */  
 table{
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0px 0px 0px;
+  margin-left: 20px;
   text-align: left;
 }
 td{
-  height: 40px;
-  padding-left: 30px;
+  min-height: 18px;
+  padding: 20px 30px 20px 30px;
+  color: black;
 }
 th{
   padding: 20px 30px 20px 30px;
-  background-color: #f0f2ed ;
-
+  background-color: #f0f2ed ;  
 }
 tr:nth-child(even){
   background-color: #f0f2ed;
