@@ -89,11 +89,10 @@ a{
 }
 .right-side {
     float: right;
-    width: 50%;
+    width: 40%;
     color: black;
 }
 .right-side img {
-  margin-left: 20px;
   width: 200px;
   height: 200px;
 }
