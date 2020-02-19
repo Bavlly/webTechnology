@@ -91,6 +91,11 @@ a{
     width: 50%;
     color: black;
 }
+.right-side img {
+  margin-left: 20px;
+  width: 200px;
+  height: 200px;
+}
 .left-side {
     float: left;
     width: 50%;
