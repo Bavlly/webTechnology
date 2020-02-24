@@ -62,23 +62,22 @@ document.body.appendChild(information);
 var table = document.createElement('table');
 for (var i = 1; i < 6; i++){
     var tr = document.createElement('tr');   
-    
-    var td1 = document.createElement('td');
-    var td2 = document.createElement('td');
-    var td3 = document.createElement('td');
 
-    var text1 = document.createTextNode('Hans');
-    var text2 = document.createTextNode('Database');
-    var text3 = document.createTextNode('Concurrency');
-
-    td1.appendChild(text1);
-    td2.appendChild(text2);
-    td3.appendChild(text3);
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
+    tr.appendChild(TableSupport('Hans'));
+    tr.appendChild(TableSupport('Database'));
+    tr.appendChild(TableSupport('Concurrency'));
+    tr.appendChild(TableSupport('xddd'));
 
     table.appendChild(tr);
+}
+
+//supports table in creating cells
+function TableSupport(text)
+{
+ var td = document.createElement('td');
+ var t = document.createTextNode(text);
+ td.appendChild(t);
+ return td;
 }
 document.body.appendChild(table);
 
