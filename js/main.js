@@ -1,5 +1,6 @@
 //Navbar 
 
+
 //Logo
 function show_image(src, width, height, alt) {
     var img = document.createElement("img");
@@ -22,11 +23,13 @@ var img = class {
 logo1 = new img('./Images/logo.png');
 
 
+//content
+
 
 
 //zo schrijf je text in javascript 
 var h1 = document.createElement('h1');
-var myText = document.createTextNode('Click');
+var myText = document.createTextNode('Find here all the information about the course');
 
 h1.appendChild(myText);
 document.body.appendChild(h1);
@@ -52,6 +55,34 @@ var myText1 = document.createTextNode(Course2.teacher);
 
 information.appendChild(myText1);
 document.body.appendChild(information);
+
+
+
+//creating table
+var table = document.createElement('table');
+for (var i = 1; i < 6; i++){
+    var tr = document.createElement('tr');   
+    
+    var td1 = document.createElement('td');
+    var td2 = document.createElement('td');
+    var td3 = document.createElement('td');
+
+    var text1 = document.createTextNode('Hans');
+    var text2 = document.createTextNode('Database');
+    var text3 = document.createTextNode('Concurrency');
+
+    td1.appendChild(text1);
+    td2.appendChild(text2);
+    td3.appendChild(text3);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+
+    table.appendChild(tr);
+}
+document.body.appendChild(table);
+
+
 
 
 //footer
