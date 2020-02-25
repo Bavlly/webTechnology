@@ -28,16 +28,23 @@ logo1 = new img('./Images/logo.png');
 
 
 //zo schrijf je text in javascript 
-var h1 = document.createElement('h1');
-var myText = document.createTextNode('Find here all the information about the course');
+const create = tag => document.createElement(tag);
+const createText = str => document.createTextNode(str);
+const append = (a,b) => a.appendChild(b);
+const appendText = (a,str) => a.appendChild(createText(str));
+const body= document.body;
 
-h1.appendChild(myText);
-document.body.appendChild(h1);
+
+
+let h2 = create('h1');
+appendText(h2,"Find here all the information about the course");
+append(body, h2);
+
 
 var x = document.createElement("P");                        // Create a <p> element
 var t = document.createTextNode("This is a paragraph.");    // Create a text node
 x.appendChild(t);                                           // Append the text to <p>
-document.body.appendChild(x);
+body.appendChild(x);
 
 
 //function Course with display and creating p
@@ -59,27 +66,58 @@ document.body.appendChild(information);
 
 
 //creating table
-var table = document.createElement('table');
-for (var i = 1; i < 6; i++){
-    var tr = document.createElement('tr');   
+let table = create('table');
+let thead = create('thead');
+let tbody = create('tbody');
 
-    tr.appendChild(TableSupport('Hans'));
-    tr.appendChild(TableSupport('Database'));
-    tr.appendChild(TableSupport('Concurrency'));
-    tr.appendChild(TableSupport('xddd'));
+function addTR (...tds) {
 
-    table.appendChild(tr);
+  let tr = create('tr');   
+  for (let text of tds) {
+    let td = create("td");
+    appendText(td,text);
+    append(tr,td);
+  }
+  
+  append(tbody,tr);
 }
 
-//supports table in creating cells
-function TableSupport(text)
-{
- var td = document.createElement('td');
- var t = document.createTextNode(text);
- td.appendChild(t);
- return td;
-}
-document.body.appendChild(table);
+
+let trhead = create('tr');
+
+for (let text of ["Week","Date","Topics","Materials","Deadlines"]){
+    let th = create('th');
+    appendText(th,text);
+    append(trhead,th);
+} 
+append(thead,trhead);
+append(table,thead);
+
+addTR("46","12/11","Introduction","","");
+addTR("","14/11","Haskell refresh","","");
+addTR("47","19/11","Threads","","");
+addTR("","21/11","Mvars","Chapter 7(plus parts of 8 & 9","");
+addTR("48","26/11","Software Transactional Memory(1)","Chapter 10","");
+addTR("","28/11","Software Transactional Memory(2)","Chapter 10","");
+addTR("","30/11","","","Assingment 1");
+addTR("49","3/12","Netchange","Netchange Algorithm, Chapter 12","");
+addTR("","5/12","Parallelism from Concurrency","Chapter 13","");
+addTR("50","10/12","Work & Span","","");
+addTR("","12/12","No lecture","","");
+addTR("51","17/12","Revision","","");
+addTR("","19/12","Mid-session exam","","");
+addTR("1","4/1","","","Assingment 2");
+addTR("2","7/1","Data Parrallelism(1)","Part 1 Introduction, chapter 5 & 6","");
+addTR("","9/11","Data Parallelism(2)","","");
+addTR("3","14/11","Data Parellelism(3)","","");
+addTR("","16/1","Scan","","");
+addTR("4","21/1","GPCPU","","");
+addTR("","23/1","Conclusion","","");
+addTR("5","30/1","Final exam","","");
+addTR("","1/2","No lecture","","Assingment 3");
+append(table,tbody)
+append(body,table);
+
 
 
 
