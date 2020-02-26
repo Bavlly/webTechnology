@@ -1,18 +1,9 @@
-
-
-
-//content
-
-
-
-//zo schrijf je text in javascript 
+//zo schrijf je text in javascript
 const create = tag => document.createElement(tag);
 const createText = str => document.createTextNode(str);
 const append = (a,b) => a.appendChild(b);
 const appendText = (a,str) => a.appendChild(createText(str));
-const body= document.body;
-
-
+const body = document.body;
 
 let h2 = create('h1');
 appendText(h2,"Find here all the information about the course");
@@ -26,23 +17,70 @@ x.appendChild(t);
 body.appendChild(x);                                          // Append the text to <p>
 
 
-
-//function Course with display and creating p
-function Course(title, code, teacher){
+//class
+class Courses{
+  constructor(title, code, period, ects, nivo) {
     this.title = title;
     this.code = code;
-    this.teacher = teacher;
+    this.period = period;
+    this.ects = ects;
+    this.nivo = nivo;
+  }
 }
 
-var Course1 = new Course('Webtechnology',  123, 'Sergey');
-var Course2 = new Course('Concurrency', 156, 'Terov');
+//class teacher extend TA
+class Teacher{
+  constructor(first, last, age, gender, interests, subject) {
+    this.name = {
+      first,
+      last
+    };
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+    this.subject = subject;
+  }
+}
+// inheritance from class Teacher
+class TA extends Teacher{
+  constructor(subject, grade, year) {
+    super();
+    this.subject = subject;
+    this.grade = grade;
+    this.year = year;
+  }
+}
 
-var information = document.createElement('p');
-var myText1 = document.createTextNode(Course2.teacher);
+//class schedule (days, time, timeslot)
+class Schedule{
+  constructor(days, time, timeslot) {
+    this.days = days;
+    this.time = time;
+    this.timeslot = timeslot;
+  }
+}
 
-information.appendChild(myText1);
-document.body.appendChild(information);
+// class course werkt
+var subject1 = new Courses("Concurrency", "INFOB3CC", "3", "7.5", "3");
+var information = create('p');
+var subject = createText(subject1.period);
 
+append(information, subject);
+append(body, information);
+
+var teacherassistent = new TA('Algoritms', '4.5', '2020');
+var info = create('p');
+var teacher = createText(teacherassistent.grade);
+
+append(info, teacher);
+append(body, info);
+
+// concurrency1 = new Courses("Concurrency", "INFOB3CC", "Trevor", "2", "C", "7.5", "3");
+// var information = create('p');
+// var subject = createText(concurrency1.teacher);
+//
+// append(information, subject);
+// append(body, information);
 
 
 //creating table
