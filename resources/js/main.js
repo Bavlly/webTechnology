@@ -17,23 +17,68 @@ body.appendChild(x);
 
 //class
 class Courses{
-  constructor(title, code, teacher, period, timeslot, ects, nivo) {
+  constructor(title, code, period, ects, nivo) {
     this.title = title;
     this.code = code;
-    this.teacher = teacher;
     this.period = period;
-    this.timeslot = timeslot;
     this.ects = ects;
     this.nivo = nivo;
   }
 }
 
-concurrency1 = new Courses("Concurrency", "INFOB3CC", "Trevor", "2", "C", "7.5", "3");
+//class teacher extend TA
+class Teacher{
+  constructor(first, last, age, gender, interests, subject) {
+    this.name = {
+      first,
+      last
+    };
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+    this.subject = subject;
+  }
+}
+// inheritance from class Teacher
+class TA extends Teacher{
+  constructor(subject, grade, year) {
+    super();
+    this.subject = subject;
+    this.grade = grade;
+    this.year = year;
+  }
+}
+
+//class schedule (days, time, timeslot)
+class Schedule{
+  constructor(days, time, timeslot) {
+    this.days = days;
+    this.time = time;
+    this.timeslot = timeslot;
+  }
+}
+
+// class course werkt
+var subject1 = new Courses("Concurrency", "INFOB3CC", "3", "7.5", "3");
 var information = create('p');
-var subject = createText(concurrency1.teacher);
+var subject = createText(subject1.period);
 
 append(information, subject);
 append(body, information);
+
+var teacherassistent = new TA('Algoritms', '4.5', '2020');
+var info = create('p');
+var teacher = createText(teacherassistent.grade);
+
+append(info, teacher);
+append(body, info);
+
+// concurrency1 = new Courses("Concurrency", "INFOB3CC", "Trevor", "2", "C", "7.5", "3");
+// var information = create('p');
+// var subject = createText(concurrency1.teacher);
+//
+// append(information, subject);
+// append(body, information);
 
 
 //creating table
