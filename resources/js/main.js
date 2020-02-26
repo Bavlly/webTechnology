@@ -29,7 +29,6 @@ class Courses{
 }
 
 concurrency1 = new Courses("Concurrency", "INFOB3CC", "Trevor", "2", "C", "7.5", "3");
-
 var information = create('p');
 var subject = createText(concurrency1.teacher);
 
