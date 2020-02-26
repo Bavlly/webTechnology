@@ -37,8 +37,8 @@ function show_img(src, width, height, alt){
 const img = class {
     constructor(src) {
         this.src = src;
-        this.show = show_img(src, 200, 200, "logo");
+        this.show = show_img(src, 200, 150, "Logo of Utrecht University");
     }
 };
 
-logo1 = new img('./images/logo.png');
+logo1 = new img('./resources/Images/logo.png');

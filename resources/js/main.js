@@ -10,7 +10,7 @@ const create = tag => document.createElement(tag);
 const createText = str => document.createTextNode(str);
 const append = (a,b) => a.appendChild(b);
 const appendText = (a,str) => a.appendChild(createText(str));
-const body= document.body;
+const body = document.body;
 
 
 
