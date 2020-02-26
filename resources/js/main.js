@@ -12,8 +12,10 @@ append(body, h2);
 
 var x = document.createElement("P");                        // Create a <p> element
 var t = document.createTextNode("This is a paragraph.");    // Create a text node
-x.appendChild(t);                                           // Append the text to <p>
-body.appendChild(x);
+
+x.appendChild(t); 
+body.appendChild(x);                                          // Append the text to <p>
+
 
 //class
 class Courses{
