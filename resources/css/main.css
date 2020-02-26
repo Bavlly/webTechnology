@@ -67,6 +67,7 @@ nav a:hover:after {width: 100%;}
 /* content */
 main {
   margin: 20px;
+  overflow: hidden;
 }
 a{
   color: #73685d;;
@@ -107,7 +108,7 @@ footer {
   bottom:0;
   width: 100%;
   height: 30px;
-  position: fixed;
+  position: relative;
 }
 
 /* tablet & mobile devices */

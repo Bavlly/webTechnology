@@ -95,5 +95,3 @@ addMultiple(tbody,"td",[
 append(table,thead);
 append(table,tbody)
 append(body,table);
-
-
