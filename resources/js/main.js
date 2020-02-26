@@ -1,18 +1,9 @@
-
-
-
-//content
-
-
-
-//zo schrijf je text in javascript 
+//zo schrijf je text in javascript
 const create = tag => document.createElement(tag);
 const createText = str => document.createTextNode(str);
 const append = (a,b) => a.appendChild(b);
 const appendText = (a,str) => a.appendChild(createText(str));
 const body= document.body;
-
-
 
 let h2 = create('h1');
 appendText(h2,"Find here all the information about the course");
@@ -24,23 +15,26 @@ var t = document.createTextNode("This is a paragraph.");    // Create a text nod
 x.appendChild(t);                                           // Append the text to <p>
 body.appendChild(x);
 
-
-//function Course with display and creating p
-function Course(title, code, teacher){
+//class
+class Courses{
+  constructor(title, code, teacher, period, timeslot, ects, nivo) {
     this.title = title;
     this.code = code;
     this.teacher = teacher;
+    this.period = period;
+    this.timeslot = timeslot;
+    this.ects = ects;
+    this.nivo = nivo;
+  }
 }
 
-var Course1 = new Course('Webtechnology',  123, 'Sergey');
-var Course2 = new Course('Concurrency', 156, 'Terov');
+concurrency1 = new Courses("Concurrency", "INFOB3CC", "Trevor", "2", "C", "7.5", "3");
 
-var information = document.createElement('p');
-var myText1 = document.createTextNode(Course2.teacher);
+var information = create('p');
+var subject = createText(concurrency1.teacher);
 
-information.appendChild(myText1);
-document.body.appendChild(information);
-
+append(information, subject);
+append(body, information);
 
 
 //creating table
