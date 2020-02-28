@@ -17,7 +17,7 @@ x.appendChild(t);
 body.appendChild(x);                                          // Append the text to <p>
 
 
-//class
+//class Courses
 class Courses{
   constructor(title, code, period, ects, nivo) {
     this.title = title;
@@ -28,7 +28,7 @@ class Courses{
   }
 }
 
-//class teacher extend TA
+//class Teacher with TA as inheritance
 class Teacher{
   constructor(first, last, age, gender, interests, subject) {
     this.name = {
@@ -51,7 +51,7 @@ class TA extends Teacher{
   }
 }
 
-//class schedule (days, time, timeslot)
+//class Schedule
 class Schedule{
   constructor(days, time, timeslot) {
     this.days = days;
