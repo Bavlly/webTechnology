@@ -1,40 +1,58 @@
 //header
-// function make_header() {
-//     var header1 = document.createElement('header');
-//     header1.setAttribute('id', 'myHeader');
-//     document.body.appendchild(header1);
+var header = document.createElement("header");
+document.body.appendChild(header);
 
-//     var h3ID = document.createElement('H3');
-//     var h3text = document.createTextNode("This is a h3 element in a header element");
-//     headerID.appendChild(h3text);
+//list item function
+function createListElement(link, text){
+    var linkje = document.createElement("a");
+    var listText = document.createTextNode(text);
+    linkje.setAttribute("href", link);
+    linkje.appendChild(listText);
+    return linkje;
+}
 
-//     document.getElementById('myHeader').appendChild(h3ID);
-// }
+//add list object function
+function addListObject(list, item){
+    var listObject = document.createElement("li");
+    listObject.appendChild(item);
+    list.appendChild(listObject);
+}
 
-// const header1 = class {
-//     constructor() {
-//         this.show = make_header();
-//     }
-// }
+//logobox
+var logoBox = document.createElement("div");
+logoBox.classList.add("logo-box");
+var logoLink = document.createElement("a");
+logoLink.setAttribute("href", "index.html");
+logo1 = createImg("./resources/Images/logo.png", 200, 100, "logo", logoLink);
+logo1.classList.add("logo");
+logoBox.appendChild(logoLink);
+header.appendChild(logoBox);
 
-// header1 = new header1();
+//navbar
+var nav = document.createElement("nav");
+var list = document.createElement("ul");
+list.classList.add("navbar");
+var indexLink = createListElement("index.html", "Home");
+addListObject(list, indexLink);
+var concurrencyLink = createListElement("concurrency.html", "Concurrency");
+addListObject(list, concurrencyLink);
+var scheduleLink = createListElement("schedule.html", "Schedule");
+addListObject(list, scheduleLink);
+var assignmentsLink = createListElement("assignments.html", "Assignments");
+addListObject(list, assignmentsLink);
+var descriptionLink = createListElement("description.html", "Description");
+addListObject(list, descriptionLink);
+var infoLink = createListElement("info.html", "Information");
+addListObject(list, infoLink);
+nav.appendChild(list);
+header.appendChild(nav);
 
-
-function show_img(src, width, height, alt){
+//logo
+function createImg(src, width, height, alt, parent){
     var img = document.createElement('img');
-    img.src = src;
-    img.width = width;
-    img.height = height;
-    img.alt = alt;
-
-    document.body.appendChild(img);
+    img.setAttribute("src", src);
+    img.setAttribute("width", width);
+    img.setAttribute("height", height);
+    img.setAttribute("alt", alt);
+    parent.appendChild(img);
 }
-
-const img = class {
-    constructor(src) {
-        this.src = src;
-        this.show = show_img(src, 200, 150, "Logo");
-    }
-}
-
-logo1 = new img('./resources/Images/logo.png');
