@@ -82,14 +82,14 @@ var ta6 = new TA("Ivo Gabe","de Wolff","22","male","Divide and conquer","Algorit
 var ta7 = new TA("Felix","Ant","21","male","Counting with gerard","Datastructuren","9","3");
 var ta8 = new TA("Mark","Dekker","21","male","Pixels","Graphics","9","3");
 
-var subject1 = new Courses("Gameprogrammeren", "INFOB1GP", "1", "7.5", "1",[Teacher1,ta1]);
-var subject2 = new Courses("Datamining", "INFOMDM", "1", "7.5", "m",[Teacher2,ta2]);
-var subject3 = new Courses("Concurrency", "INFOB3CC", "2", "7.5", "3",[Teacher3,ta3]);
-var subject4 = new Courses("Kunstmatige intelligentie", "INFOB2KI", "2", "7.5", "2",[Teacher4,ta4]);
-var subject5 = new Courses("Databases", "INFODB", "3", "7.5", "1",[Teacher5,ta5]);
-var subject6 = new Courses("Algoritmiek", "INFOAL", "3", "7.5", "3",[Teacher6,ta6]);
-var subject7 = new Courses("Datastructuren", "INFODS", "4", "7.5", "2",[Teacher7,ta7]);
-var subject8 = new Courses("Graphics", "INFOGR", "4", "7.5", "2",[Teacher8,ta8]);
+var subject1 = new Courses("Gameprogrammeren", "INFOB1GP", "1", "7.5", "1",[teacher1.ta1]);
+var subject2 = new Courses("Datamining", "INFOMDM", "1", "7.5", "m",[teacher2,ta2]);
+var subject3 = new Courses("Concurrency", "INFOB3CC", "2", "7.5", "3",[teacher3,ta3]);
+var subject4 = new Courses("Kunstmatige intelligentie", "INFOB2KI", "2", "7.5", "2",[teacher4,ta4]);
+var subject5 = new Courses("Databases", "INFODB", "3", "7.5", "1",[teacher5,ta5]);
+var subject6 = new Courses("Algoritmiek", "INFOAL", "3", "7.5", "3",[teacher6,ta6]);
+var subject7 = new Courses("Datastructuren", "INFODS", "4", "7.5", "2",[teacher7,ta7]);
+var subject8 = new Courses("Graphics", "INFOGR", "4", "7.5", "2",[teacher8,ta8]);
 
 
 
@@ -135,8 +135,8 @@ function addMultiple(twhat,tag, tds){
 addTR(thead,"th",["Period","Timeslot","Code","Nivo","ects", "vak"]);
 addMultiple(tbody,"td",[
     [subject1.period, subject1.period, subject1.code, subject1.nivo, subject1.ects, subject1.title],
-    [subject1.period, subject1.period, subject1.code, subject1.nivo, subject1.ects, subject1.title],
-    [subject1.period, subject1.period, subject1.code, subject1.nivo, subject1.ects, subject1.title],
+    [subject2.period, subject2.period, subject2.code, subject2.nivo, subject2.ects, subject2.title],
+    [subject3.period, subject3.period, subject3.code, subject3.nivo, subject3.ects, subject3.title],
 
 ]);
 
