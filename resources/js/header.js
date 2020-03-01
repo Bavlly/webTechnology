@@ -19,14 +19,15 @@ function addListObject(list, item){
 }
 
 //logobox
-var logoBox = document.createElement("div");
-logoBox.classList.add("logo-box");
-var logoLink = document.createElement("a");
-logoLink.setAttribute("href", "index.html");
-logo1 = createImg("./resources/Images/logo.png", 200, 100, "logo", logoLink);
-logo1.classList.add("logo");
-logoBox.appendChild(logoLink);
-header.appendChild(logoBox);
+// var logoBox = document.createElement("div");
+// logoBox.classList.add("logo-box");
+// var logoLink = document.createElement("a");
+// logoLink.setAttribute("href", "index.html");
+// logo1 = createImg("./resources/Images/logo.png", 200, 100, "logo", logoLink);
+// logo1.classList.add("logo");
+// logoBox.appendChild(logoLink);
+// header.appendChild(logoBox);
+
 
 //navbar
 var nav = document.createElement("nav");

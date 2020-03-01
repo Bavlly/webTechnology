@@ -3,6 +3,11 @@ body {
     font-family: 'Open Sans', 'Montserrat', sans-serif;
   }
 
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+
 /* navbar */
 header {
     padding: 0px 20px;

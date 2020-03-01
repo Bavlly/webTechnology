@@ -5,9 +5,9 @@ const append = (a,b) => a.appendChild(b);
 const appendText = (a,str) => a.appendChild(createText(str));
 const body = document.body;
 
-let h2 = create('h1');
-appendText(h2,"Find here all the information about the course");
-append(body, h2);
+let h1 = create('h1');
+appendText(h1,"Find here all the information about the course");
+append(body, h1);
 
 // Create a <p> element
 var x = document.createElement("P");
@@ -91,23 +91,19 @@ var subject6 = new Courses("Algoritmiek", "INFOAL", "3", "7.5", "3",[teacher6,ta
 var subject7 = new Courses("Datastructuren", "INFODS", "4", "7.5", "2",[teacher7,ta7]);
 var subject8 = new Courses("Graphics", "INFOGR", "4", "7.5", "2",[teacher8,ta8]);
 
-
-
-
-
-
-var information = create('p');
-var subject = createText(subject1.period);
-
-append(information, subject);
-append(body, information);
-
-var teacherassistent = new TA('Algoritms', '4.5', '2020');
+//volgens mij bedoel je dit melwin ?
+var teacherAssistent = new TA('Voornaam', 'achternaam', '21', 'Male', 'reading', 'algortims', '4.5', '2020');
 var info = create('p');
-var teacher = createText(teacherassistent.grade);
+var teacher = createText(teacherAssistent.grade);
 
 append(info, teacher);
 append(body, info);
+// var teacherassistent = new TA('Algoritms', '4.5', '2020');
+// var info = create('p');
+// var teacher = createText(teacherassistent.grade);
+//
+// append(info, teacher);
+// append(body, info);
 
 //creating table
 let table = create('table');
@@ -137,9 +133,23 @@ addMultiple(tbody,"td",[
     [subject1.period, subject1.period, subject1.code, subject1.nivo, subject1.ects, subject1.title],
     [subject2.period, subject2.period, subject2.code, subject2.nivo, subject2.ects, subject2.title],
     [subject3.period, subject3.period, subject3.code, subject3.nivo, subject3.ects, subject3.title],
+    [subject4.period, subject4.period, subject4.code, subject4.nivo, subject4.ects, subject4.title],
+    [subject5.period, subject5.period, subject5.code, subject5.nivo, subject5.ects, subject5.title],
+    [subject6.period, subject6.period, subject6.code, subject6.nivo, subject6.ects, subject6.title],
+    [subject7.period, subject7.period, subject7.code, subject7.nivo, subject7.ects, subject7.title],
+    [subject8.period, subject8.period, subject8.code, subject8.nivo, subject8.ects, subject8.title],
 
 ]);
 
 append(table,thead);
-append(table,tbody)
+append(table,tbody);
 append(body,table);
+
+function myFunction() {
+  var btn = document.createElement('input');
+  btn.setAttribute('type', 'button'); // input element of type button
+  btn.setAttribute('value', 'FINISH GAME');
+  btn.onclick = sf;
+  document.body.appendChild(btn);
+};
+
