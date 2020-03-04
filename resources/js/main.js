@@ -138,18 +138,24 @@ addMultiple(tbody,"td",[
     [subject6.period, subject6.period, subject6.code, subject6.nivo, subject6.ects, subject6.title],
     [subject7.period, subject7.period, subject7.code, subject7.nivo, subject7.ects, subject7.title],
     [subject8.period, subject8.period, subject8.code, subject8.nivo, subject8.ects, subject8.title],
-
 ]);
 
 append(table,thead);
 append(table,tbody);
 append(body,table);
 
-function myFunction() {
-  var btn = document.createElement('input');
-  btn.setAttribute('type', 'button'); // input element of type button
-  btn.setAttribute('value', 'FINISH GAME');
-  btn.onclick = sf;
-  document.body.appendChild(btn);
-};
+
+// 50% code
+var btn = create('button');
+var btnT = createText('Activate dark-mode');
+btn.setAttribute("id", "button")
+append(btn, btnT);
+append(body, btn);
+
+function darkmode() {
+    document.body.classList.toggle('dark-mode');
+}
+document.getElementById("button").addEventListener("click", darkmode, false);
+
+
 
