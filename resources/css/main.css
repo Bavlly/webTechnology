@@ -8,6 +8,16 @@ body {
     color: white;
 }
 
+.dark-mode tr:nth-child(even){
+  background-color: rgb(36, 35, 35);
+}
+
+.dark-mode th{
+  background-color: rgb(36, 35, 35);
+}
+
+
+
 /* navbar */
 header {
     padding: 0px 20px;

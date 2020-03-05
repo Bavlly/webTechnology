@@ -148,7 +148,7 @@ function addSubject(tbody,subject){
     appendText(td,t);
     append(tr,td);
   }
-  
+
   createTooltip(subject.title,teacherText(subject.teacher),tr);
 
   append(tbody,tr);
