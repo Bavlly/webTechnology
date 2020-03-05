@@ -164,7 +164,6 @@ nav a:after {content: none;}
     text-align: right;
     background-color: #f0f2ed;
   }
-
   
   table{
     width: 100%;
@@ -221,7 +220,7 @@ tr:hover{
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 150px;
     background-color: #555;
     color: #fff;
     text-align: left;
@@ -231,7 +230,7 @@ tr:hover{
     z-index: 1;
     bottom: 125%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -30px;
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -250,4 +249,5 @@ tr:hover{
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+    width: auto;
 }
