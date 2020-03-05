@@ -6,7 +6,6 @@ body {
 .dark-mode{
     background-color: black;
     color: white;
-
 }
 
 /* navbar */
@@ -191,6 +190,7 @@ nav a:after {content: none;}
    vertical-align: middle;
   }
 }
+
 /* table schedule */  
 table{
   width: 100%;
@@ -200,7 +200,6 @@ table{
 td{
   min-height: 18px;
   padding: 20px 30px 20px 30px;
-  color: black;
 }
 th{
   padding: 20px 30px 20px 30px;

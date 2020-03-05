@@ -154,8 +154,7 @@ append(body, btn);
 
 function darkmode() {
     document.body.classList.toggle('dark-mode');
+
 }
 document.getElementById("button").addEventListener("click", darkmode, false);
-
-
 
