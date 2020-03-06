@@ -356,3 +356,10 @@ tr:hover{
 {
     transition: 0.3s ease all;
 }
+
+select{
+    background-color: lightgrey;
+    border: none;
+    
+}
+
