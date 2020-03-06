@@ -5,35 +5,33 @@ const append = (a, b) => a.appendChild(b);
 const appendText = (a, str) => a.appendChild(createText(str));
 const body = document.body;
 
-var mainText = create('main');
+//main text
+var mainText = create("main");
 append(body, mainText)
 
-let h1 = create('h1');
+//heading
+let h1 = create("h1");
 appendText(h1,"Find here all the information about the course");
 append(mainText, h1);
 
-// Create a <p> element
-var x = document.createElement("p");
-// Create a text node
-var t = document.createTextNode("Below you can find a table containing information about multiple courses, hover over the 'vakken' and the 'Period' to gain more information about the course.");
-
-x.appendChild(t);
-// Append the text to <p>
-mainText.appendChild(x);
+//paragraph
+var p = create("p");
+appendText(p,"Below you can find a table containing information about multiple courses, hover over the 'vakken' and the 'Period' to gain more information about the course.");
+append(mainText,p);
 
 
-//Toggle button
-var row = create('div');
+//Toggle button creation
+var row = create("div");
 row.classList.add("row");
-var button = create('div');
+var button = create("div");
 button.classList.add("button", "r");
 button.setAttribute("id", "button1");
-var inputType = create('input');
+var inputType = create("input");
 inputType.setAttribute("type", "checkbox");
 inputType.classList.add("checkbox");
-var balls = create('div');
+var balls = create("div");
 balls.classList.add("balls");
-var layer = create('div');
+var layer = create("div");
 layer.classList.add("layer");
 
 append(button, inputType);
@@ -55,7 +53,7 @@ class Courses {
   }
 }
 
-//class Teacher with TA as inheritance
+//class Teacher 
 class Teacher {
   constructor(first, last, age, gender, interests, subject) {
     this.first = first;
@@ -68,7 +66,7 @@ class Teacher {
   }
 }
 
-// inheritance from class Teacher
+//class TA with inheritance from class Teacher
 class TA extends Teacher {
   constructor(first, last, age, gender, interest, subject, grade, year) {
     super(first, last, age, gender, interest, subject);
@@ -87,7 +85,7 @@ class Schedule {
   }
 }
 
-// class course werkt
+// creation of all objects
 var timeslotA = new Schedule(["Monday", "Wednessday"], ["9-13", "9-13"], "A");
 var timeslotB = new Schedule(["Tuesday", "Thursday"], ["9-13", "9-13"], "B");
 var timeslotC = new Schedule(["monday", "Thursday"], ["13-17", "9-13"], "C");
@@ -125,6 +123,7 @@ let table = create('table');
 let thead = create('thead');
 let tbody = create('tbody');
 
+//function that adds a row of table elements td/th to a table body/head/foot with given elements
 function addTR(twhat, tag, tds) {
 
   let tr = create("tr");
@@ -137,7 +136,7 @@ function addTR(twhat, tag, tds) {
   append(twhat, tr);
 }
 
-//table
+//adds a subject to the a table
 function addSubject(tbody, subject) {
   let tr = create("tr");
   let tds = subjectToArray(subject);
@@ -152,21 +151,25 @@ function addSubject(tbody, subject) {
   append(tbody, tr);
 }
 
+//adds multiple subjects at once
 function addMultiple(twhat, subjects) {
   for (let subject of subjects)
     addSubject(twhat, subject);
 }
 
+//tooltip text for teacher
 function teacherText(teacher) {
   let str = "Teacher: " + teacher[0].name + ", TA: " + teacher[1].name + ", TA grade: " + teacher[1].grade + ", TA year: " + teacher[1].year;
   return str;
 }
 
+//tooltip text for timeslot
 function timeSlotText(timeslot) {
   let str = timeslot.days[0] + ": " + timeslot.time[0] + " and " + timeslot.days[1] + ": " + timeslot.time[1];
   return str;
 }
 
+//creates a tooltip and appends it to a parent
 function createTooltip(title, tiptext, parent) {
   let box = create("td");
   let tooltip = create("a");
@@ -182,11 +185,14 @@ function createTooltip(title, tiptext, parent) {
   append(parent, box);
 }
 
+//maps the a subject object to an array of strings
 subjectToArray = subject => [subject.period, subject.code, subject.nivo, subject.ects];
 
+//add table rows
 addTR(thead, "th", ["Period", "Timeslot", "Code", "Nivo", "ects", "vak"]);
 addMultiple(tbody, [subject1, subject2, subject3, subject4, subject5, subject6, subject7, subject8]);
 
+//append table
 append(table, thead);
 append(table, tbody);
 append(body, table);
@@ -216,9 +222,10 @@ function darkmode() {
 
     }
   }
-
 }
 
+
+//creates to labels with a select to choose colors for the text and background
 var labelColor = create("label");
 labelColor.setAttribute("label", "color_label")
 labelColor.setAttribute("for", "color");
@@ -233,7 +240,7 @@ appendText(labelBackground, "pick a background color: ");
 createSelect(labelBackground, "background", "white", "black", "red", "blue", "green", "yellow");
 append(body, labelBackground);
 
-//styling
+//creats a select
 function createSelect(label, value, ...values) {
 
   var select = create("select");
@@ -248,28 +255,26 @@ function createSelect(label, value, ...values) {
   append(label, select);
 }
 
+//changes text color to what the user chose
 function changeColor() {
-
   var color = document.getElementById("color").value;
 
   changeStyling("a", "color", color);
   changeStyling("h1", "color", color);
   changeStyling("p", "color", color);
-  changeStyling("td", "color", color);
-  changeStyling("th", "color", color);
+  changeStyling("tr", "color", color);
   changeStyling("button", "color", color);
   changeStyling("footer", "color", color);
   changeStyling("label", "color", color);
 }
 
+//changes background color to what the user chose
 function changeBackcolor() {
-
   var background = document.getElementById("background").value;
   changeStyling("body", "backgroundColor", background);
-  //changeStyling("td", "backgroundColor",background)
 }
 
-
+//allows to change the color of elements
 function changeStyling(tag, styling, color) {
   var tags = document.getElementsByTagName(tag);
   for (i = 0; i < tags.length; i++) {
@@ -280,7 +285,7 @@ function changeStyling(tag, styling, color) {
   }
 }
 
-
+//event listeners that are invoked by user interaction
 document.getElementById("button1").addEventListener("click", darkmode, false);
 document.getElementById("color").addEventListener("change", changeColor, false);
 document.getElementById("background").addEventListener("change", changeBackcolor, false);

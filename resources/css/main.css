@@ -208,7 +208,13 @@ nav a:after {content: none;}
    display: inline-block;
    vertical-align: middle;
   }
+  
+  .tooltiptext{
+    display:none;
+  }
+   
 }
+
 
 /* table schedule */  
 table{
