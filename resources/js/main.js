@@ -10,8 +10,12 @@ let h1 = create('h1');
 appendText(h1,"Find here all the information about the course");
 append(body, h1);
 
+//document.getElementsByTagName('h1')[0].style.color = "blue";
+
+
+
 // Create a <p> element
-var x = document.createElement("P");
+var x = document.createElement("p");
 // Create a text node
 var t = document.createTextNode("This is a paragraph.");
 
@@ -137,6 +141,17 @@ function addTR (twhat,tag,tds) {
   append(twhat,tr);
 }
 
+
+function changeStyling(tag,styling,color){
+  var tags = document.getElementsByTagName(tag);
+  for(i=0;i<tags.length;i++){
+    if(styling == "color")
+      document.getElementsByTagName(tag)[i].style.color = color;
+    if(styling == "backgroundColor")
+      document.getElementsByTagName(tag)[i].style.backgroundColor = color;
+  }
+}
+
 function addSubject(tbody,subject){
   let tr = create("tr");
   let tds = subjectToArray(subject);
@@ -214,6 +229,7 @@ function darkmode() {
 }
 document.getElementById("button").addEventListener("click", darkmode, false);
 
+<<<<<<< HEAD
 //overlay effect
 var btnSettings = create('button');
 var btnSettingsT = createText('Change settings');
@@ -231,3 +247,10 @@ function myFunction(){
   // }
   document.getElementById('button').addEventListener('click', myFunction, false);
 }
+=======
+// changeStyling("h1","color","purple");
+// changeStyling("p","backgroundColor","red");
+// changeStyling("a","backgroundColor","green");
+// changeStyling("td","backgroundColor","orange");
+// changeStyling("body","backgroundColor","pink");
+>>>>>>> 3bcfdc8c9074e97ffbbcee52630d480d09226606
