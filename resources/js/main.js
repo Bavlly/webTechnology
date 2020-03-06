@@ -5,14 +5,9 @@ const append = (a,b) => a.appendChild(b);
 const appendText = (a,str) => a.appendChild(createText(str));
 const body = document.body;
 
-
 let h1 = create('h1');
 appendText(h1,"Find here all the information about the course");
 append(body, h1);
-
-//document.getElementsByTagName('h1')[0].style.color = "blue";
-
-
 
 // Create a <p> element
 var x = document.createElement("p");
@@ -22,7 +17,6 @@ var t = document.createTextNode("This is a paragraph.");
 x.appendChild(t);
 // Append the text to <p>
 body.appendChild(x);
-
 
 //class Courses
 class Courses{
@@ -49,6 +43,7 @@ class Teacher{
     this.subject = subject;
   }
 }
+
 // inheritance from class Teacher
 class TA extends Teacher{
   constructor(first, last, age, gender, interest, subject, grade, year) {
@@ -101,15 +96,6 @@ var subject6 = new Courses("Algoritmiek", "INFOAL", "3",timeslotB, "7.5", "3",[t
 var subject7 = new Courses("Datastructuren", "INFODS", "4",timeslotC, "7.5", "2",[teacher7,ta7]);
 var subject8 = new Courses("Graphics", "INFOGR", "4",timeslotD, "7.5", "2",[teacher8,ta8]);
 
-//volgens mij bedoel je dit melwin ?
-var teacherAssistent = new TA('Voornaam', 'achternaam', '21', 'Male', 'reading', 'algortims', '4.5', '2020');
-var info = create('p');
-
-
-// appendText(info, teacherText(teacher1));
-// append(body, info);
-
-//let text = teacher[0].name + teacher[1].name
 let box = create("td");
 let tooltip = create("a");
 append(box,tooltip);
@@ -137,25 +123,13 @@ function addTR (twhat,tag,tds) {
     appendText(td,text);
     append(tr,td);
   }
-  
   append(twhat,tr);
 }
 
-
-function changeStyling(tag,styling,color){
-  var tags = document.getElementsByTagName(tag);
-  for(i=0;i<tags.length;i++){
-    if(styling == "color")
-      document.getElementsByTagName(tag)[i].style.color = color;
-    if(styling == "backgroundColor")
-      document.getElementsByTagName(tag)[i].style.backgroundColor = color;
-  }
-}
-
+//table
 function addSubject(tbody,subject){
   let tr = create("tr");
   let tds = subjectToArray(subject);
-
   createTooltip(subject.timeslot.timeslot,timeSlotText(subject.timeslot),tr);
 
   for(let t of tds){
@@ -163,28 +137,21 @@ function addSubject(tbody,subject){
     appendText(td,t);
     append(tr,td);
   }
-
   createTooltip(subject.title,teacherText(subject.teacher),tr);
-
   append(tbody,tr);
  }
-
 function addMultiple(twhat, subjects){
    for (let subject of subjects)
     addSubject(twhat,subject);
 }
-
-
 function teacherText(teacher){
   let str = "Teacher: " + teacher[0].name + ", TA: " + teacher[1].name + ", TA grade: " + teacher[1].grade + ", TA year: " + teacher[1].year;
   return str;
 }
-
 function timeSlotText(timeslot){
   let str = timeslot.days[0] + ": " + timeslot.time[0] + " and " + timeslot.days[1] + ": " + timeslot.time[1];
   return str;
 }
-
 function createTooltip(title,tiptext,parent){
   let box = create("td");
   let tooltip = create("a");
@@ -209,8 +176,18 @@ append(table,thead);
 append(table,tbody);
 append(body,table);
 
+//styling Js
+function changeStyling(tag,styling,color){
+  var tags = document.getElementsByTagName(tag);
+  for(i=0;i<tags.length;i++){
+    if(styling == "color")
+      document.getElementsByTagName(tag)[i].style.color = color;
+    if(styling == "backgroundColor")
+      document.getElementsByTagName(tag)[i].style.backgroundColor = color;
+  }
+}
 
-//dark-mode
+//darkMode
 var btn = create('button');
 var btnT = createText('Activate dark-mode');
 btn.setAttribute("id", "button");
@@ -228,17 +205,12 @@ function darkmode() {
 }
 document.getElementById("button").addEventListener("click", darkmode, false);
 
-
-
-
-//overlay effect
+//change settings element page
 var btnSettings = create('button');
 var btnSettingsT = createText('Change settings');
 btnSettings.setAttribute('id', 'demo');
 append(btnSettings, btnSettingsT);
 append(body, btnSettings);
-
-
 
 function myFunction() {
   var txt;
@@ -254,12 +226,5 @@ function myFunction() {
     }
   }
 }
-
 document.getElementById("demo").addEventListener("click", myFunction, false);
-
-// changeStyling("h1","color","purple");
-// changeStyling("p","backgroundColor","red");
-// changeStyling("a","backgroundColor","green");
-// changeStyling("td","backgroundColor","orange");
-// changeStyling("body","backgroundColor","pink");
 

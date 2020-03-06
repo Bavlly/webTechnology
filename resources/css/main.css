@@ -3,32 +3,6 @@ body {
     font-family: 'Open Sans', 'Montserrat', sans-serif;
   }
 
-.dark-mode{
-    background-color: black;
-    color: white;
-}
-
-.dark-mode tr:nth-child(even){
-  background-color: rgb(36, 35, 35);
-}
-
-.dark-mode th{
-  background-color: rgb(36, 35, 35);
-}
-
-.dark-mode tr:hover{
-    background-color: rgb(57, 56, 56);
-}
-
-.dark-mode header{
-    background: repeating-linear-gradient(45deg, gray, dimgrey 20px, dimgrey 20px, dimgrey 40px);
-}
-
-.dark-mode nav a{
-    color: white;
-}
-
-
 /* navbar */
 header {
     padding: 0px 20px;
@@ -36,7 +10,6 @@ header {
     box-shadow: 0 4px 6px rgba(0,0,0,.2);
     max-width: 100%;
   }
-  
 .logo-box {
     float: left;
     margin-right: 20px;
@@ -124,6 +97,32 @@ a{
     float: left;
     width: 50%;
     color: black;
+}
+
+/*dark-mode*/
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+
+.dark-mode tr:nth-child(even){
+    background-color: rgb(36, 35, 35);
+}
+
+.dark-mode th{
+    background-color: rgb(36, 35, 35);
+}
+
+.dark-mode tr:hover{
+    background-color: rgb(57, 56, 56);
+}
+
+.dark-mode header{
+    background: repeating-linear-gradient(45deg, gray, dimgrey 20px, dimgrey 20px, dimgrey 40px);
+}
+
+.dark-mode nav a{
+    color: white;
 }
 
 /* footer */
@@ -238,7 +237,6 @@ tr:hover{
     display: inline-block;
     border-bottom: 1px dotted black;
 }
-
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 150px;
@@ -255,7 +253,6 @@ tr:hover{
     opacity: 0;
     transition: opacity 0.3s;
 }
-
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
@@ -266,7 +263,6 @@ tr:hover{
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
-
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
