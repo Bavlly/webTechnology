@@ -105,24 +105,6 @@ var subject8 = new Courses("Graphics", "INFOGR", "4",timeslotD, "7.5", "2",[teac
 var teacherAssistent = new TA('Voornaam', 'achternaam', '21', 'Male', 'reading', 'algortims', '4.5', '2020');
 var info = create('p');
 
-
-// appendText(info, teacherText(teacher1));
-// append(body, info);
-
-//let text = teacher[0].name + teacher[1].name
-let box = create("td");
-let tooltip = create("a");
-append(box,tooltip);
-tooltip.classList.add("tooltip")
-appendText(tooltip,subject1.title);
-
-let tooltipText = create("span");
-tooltipText.classList.add("tooltiptext");
-let text = teacherText(subject1.teacher)
-appendText(tooltipText, teacherText(subject1.teacher));
-append(tooltip,tooltipText);
-append(body,box);
-
 //creating table
 let table = create('table');
 let thead = create('thead');
@@ -141,16 +123,6 @@ function addTR (twhat,tag,tds) {
   append(twhat,tr);
 }
 
-
-function changeStyling(tag,styling,color){
-  var tags = document.getElementsByTagName(tag);
-  for(i=0;i<tags.length;i++){
-    if(styling == "color")
-      document.getElementsByTagName(tag)[i].style.color = color;
-    if(styling == "backgroundColor")
-      document.getElementsByTagName(tag)[i].style.backgroundColor = color;
-  }
-}
 
 function addSubject(tbody,subject){
   let tr = create("tr");
@@ -217,28 +189,96 @@ btn.setAttribute("id", "button");
 append(btn, btnT);
 append(body, btn);
 
+
 function darkmode() {
+    if(document.body.classList.contains("dark-mode")){
+    var confirmation = confirm("Do you want to turn darkmode off? ")
+    if(confirmation == true){
+    document.body.classList.toggle("dark-mode");
+    document.getElementById("color").value = "black";
+      changeColor();
+      document.getElementById("background").value = "white";
+      changeBackcolor();
+
+    }
+    }
+    else{
     var confirmation = confirm("Do you really want dark mode? ");
     if (confirmation == true){
+      
       document.body.classList.toggle('dark-mode');
-    } else {
-      return false;
-    }
+      document.getElementById("color").value = "white";
+      changeColor();
+      document.getElementById("background").value = "black";
+      changeBackcolor();
+
+    } 
+  }
 
 }
 document.getElementById("button").addEventListener("click", darkmode, false);
 
 
+function changeStyling(tag,styling,color){
+  var tags = document.getElementsByTagName(tag);
+  for(i=0;i<tags.length;i++){
+    if(styling == "color")
+      document.getElementsByTagName(tag)[i].style.color = color;
+    if(styling == "backgroundColor")
+      document.getElementsByTagName(tag)[i].style.backgroundColor = color;
+  }
+}
 
+var labelColor = create("label");
+labelColor.setAttribute("label","color_label")
+labelColor.setAttribute("for","color");
+appendText(labelColor,"pick a text color: ");
+createSelect(labelColor,"color","black","white","red","blue","green","yellow");
+append(body,labelColor);
 
-//overlay effect
-var btnSettings = create('button');
-var btnSettingsT = createText('Change settings');
-btnSettings.setAttribute('id', 'demo');
-append(btnSettings, btnSettingsT);
-append(body, btnSettings);
+var labelBackground = create("label");
+labelBackground.setAttribute("label","coloBackground_label")
+labelBackground.setAttribute("for","background");
+appendText(labelBackground,"pick a background color: ");
+createSelect(labelBackground,"background","white","black","red","blue","green","yellow");
+append(body,labelBackground);
 
+document.getElementById("color").addEventListener("change", changeColor, false);
+document.getElementById("background").addEventListener("change", changeBackcolor, false);
 
+function changeColor(){
+ 
+  var color = document.getElementById("color").value;
+  
+  changeStyling("a","color",color);
+  changeStyling("h1","color",color);
+  changeStyling("p","color",color);
+  changeStyling("td","color",color);
+  changeStyling("th","color",color);
+  changeStyling("button","color",color);
+  changeStyling("footer","color",color);
+  changeStyling("label","color",color);  
+}
+
+function changeBackcolor(){
+  
+  var background = document.getElementById("background").value;
+  changeStyling("body","backgroundColor",background);
+}
+
+function createSelect(label,value,...values){
+   
+  var select = create("select");
+  select.setAttribute("id", value);
+
+  for(let val of values){
+  var option = create("option");
+  option.setAttribute("value",val);
+  appendText(option,val);
+  append(select,option);
+  }
+  append(label,select);
+}
 
 function myFunction() {
   var txt;
@@ -257,9 +297,4 @@ function myFunction() {
 
 document.getElementById("demo").addEventListener("click", myFunction, false);
 
-// changeStyling("h1","color","purple");
-// changeStyling("p","backgroundColor","red");
-// changeStyling("a","backgroundColor","green");
-// changeStyling("td","backgroundColor","orange");
-// changeStyling("body","backgroundColor","pink");
 
