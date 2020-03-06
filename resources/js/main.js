@@ -10,8 +10,12 @@ let h1 = create('h1');
 appendText(h1,"Find here all the information about the course");
 append(body, h1);
 
+//document.getElementsByTagName('h1')[0].style.color = "blue";
+
+
+
 // Create a <p> element
-var x = document.createElement("P");
+var x = document.createElement("p");
 // Create a text node
 var t = document.createTextNode("This is a paragraph.");
 
@@ -137,6 +141,17 @@ function addTR (twhat,tag,tds) {
   append(twhat,tr);
 }
 
+
+function changeStyling(tag,styling,color){
+  var tags = document.getElementsByTagName(tag);
+  for(i=0;i<tags.length;i++){
+    if(styling == "color")
+      document.getElementsByTagName(tag)[i].style.color = color;
+    if(styling == "backgroundColor")
+      document.getElementsByTagName(tag)[i].style.backgroundColor = color;
+  }
+}
+
 function addSubject(tbody,subject){
   let tr = create("tr")
   let tds = subjectToArray(subject);
@@ -198,7 +213,7 @@ append(body,table);
 // 50% code
 var btn = create('button');
 var btnT = createText('Activate dark-mode');
-btn.setAttribute("id", "button")
+btn.setAttribute("id", "button");
 append(btn, btnT);
 append(body, btn);
 
@@ -208,3 +223,8 @@ function darkmode() {
 }
 document.getElementById("button").addEventListener("click", darkmode, false);
 
+// changeStyling("h1","color","purple");
+// changeStyling("p","backgroundColor","red");
+// changeStyling("a","backgroundColor","green");
+// changeStyling("td","backgroundColor","orange");
+// changeStyling("body","backgroundColor","pink");
