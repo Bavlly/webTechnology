@@ -15,7 +15,7 @@ append(mainText, h1);
 // Create a <p> element
 var x = document.createElement("p");
 // Create a text node
-var t = document.createTextNode("Below you can find a table containing information about multiple courses, hover over the 'vakken' to gain more information about the course.");
+var t = document.createTextNode("Below you can find a table containing information about multiple courses, hover over the 'vakken' and the 'Period' to gain more information about the course.");
 
 x.appendChild(t);
 // Append the text to <p>
@@ -138,7 +138,6 @@ function addTR(twhat, tag, tds) {
 }
 
 //table
-
 function addSubject(tbody, subject) {
   let tr = create("tr");
   let tds = subjectToArray(subject);
@@ -192,6 +191,8 @@ append(table, thead);
 append(table, tbody);
 append(body, table);
 
+
+//darkMode
 function darkmode() {
   if (document.body.classList.contains("dark-mode")) {
     var confirmation = confirm("Do you want to turn darkmode off? ")
@@ -232,6 +233,7 @@ appendText(labelBackground, "pick a background color: ");
 createSelect(labelBackground, "background", "white", "black", "red", "blue", "green", "yellow");
 append(body, labelBackground);
 
+//styling
 function createSelect(label, value, ...values) {
 
   var select = create("select");
@@ -266,6 +268,7 @@ function changeBackcolor() {
   changeStyling("body", "backgroundColor", background);
   //changeStyling("td", "backgroundColor",background)
 }
+
 
 function changeStyling(tag, styling, color) {
   var tags = document.getElementsByTagName(tag);
