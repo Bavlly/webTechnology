@@ -225,32 +225,41 @@ function darkmode() {
       return false;
     }
 
-
 }
 document.getElementById("button").addEventListener("click", darkmode, false);
 
-<<<<<<< HEAD
+
+
+
 //overlay effect
 var btnSettings = create('button');
 var btnSettingsT = createText('Change settings');
-btn.setAttribute('id', 'demo');
+btnSettings.setAttribute('id', 'demo');
 append(btnSettings, btnSettingsT);
 append(body, btnSettings);
 
-function myFunction(){
+
+
+function myFunction() {
   var txt;
-  var person = prompt("Which color do you want?");
-  // if (person == null || person == ""){
-  //   txt = "user didn't change the settings";
-  // } else {
-  //   txt = "Hello" + person + "we changed everything";
-  // }
-  document.getElementById('button').addEventListener('click', myFunction, false);
+  var color = prompt("Enter a color (in English please)");
+  if (color == null || color == "") {
+    return false;
+  } else {
+    var tag = prompt("Enter a valid tag (a,p,h1,td,th,thead,tbody,body)");
+    if (tag == null || tag == "") {
+      return false;
+    } else {
+      changeStyling(tag,"color",color);
+    }
+  }
 }
-=======
+
+document.getElementById("demo").addEventListener("click", myFunction, false);
+
 // changeStyling("h1","color","purple");
 // changeStyling("p","backgroundColor","red");
 // changeStyling("a","backgroundColor","green");
 // changeStyling("td","backgroundColor","orange");
 // changeStyling("body","backgroundColor","pink");
->>>>>>> 3bcfdc8c9074e97ffbbcee52630d480d09226606
+
