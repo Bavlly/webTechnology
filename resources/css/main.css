@@ -16,6 +16,10 @@ body {
   background-color: rgb(36, 35, 35);
 }
 
+.dark-mode tr:hover{
+    background-color: rgb(57, 56, 56);
+}
+
 
 
 /* navbar */
