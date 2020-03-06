@@ -5,19 +5,50 @@ const append = (a,b) => a.appendChild(b);
 const appendText = (a,str) => a.appendChild(createText(str));
 const body = document.body;
 
+var mainText = create('main');
+append(body, mainText)
 
 let h1 = create('h1');
 appendText(h1,"Find here all the information about the course");
-append(body, h1);
+append(mainText, h1);
 
 // Create a <p> element
 var x = document.createElement("P");
 // Create a text node
-var t = document.createTextNode("This is a paragraph.");
+var t = document.createTextNode("Below you can find a table containing information about multiple courses, hover over the 'vakken' to gain more information about the course.");
 
 x.appendChild(t);
 // Append the text to <p>
-body.appendChild(x);
+mainText.appendChild(x);
+
+
+//Toggle button
+var row = create('div');
+row.classList.add("row");
+var button = create('div');
+button.classList.add("button", "r");
+button.setAttribute("id", "button1");
+var inputType = create('input');
+inputType.setAttribute("type", "checkbox");
+inputType.classList.add("checkbox");
+var balls = create('div');
+balls.classList.add("balls");
+var layer = create('div');
+layer.classList.add("layer");
+
+append(button, inputType);
+append(button, balls);
+append(button, layer);
+append(row, button);
+append(mainText, row);
+
+function darkmode() {
+    document.body.classList.toggle('dark-mode');
+
+}
+document.getElementById("button1").addEventListener("click", darkmode, false);
+
+
 
 
 //class Courses
@@ -195,16 +226,5 @@ append(table,tbody);
 append(body,table);
 
 
-// 50% code
-var btn = create('button');
-var btnT = createText('Activate dark-mode');
-btn.setAttribute("id", "button")
-append(btn, btnT);
-append(body, btn);
 
-function darkmode() {
-    document.body.classList.toggle('dark-mode');
-
-}
-document.getElementById("button").addEventListener("click", darkmode, false);
 

@@ -4,11 +4,11 @@ document.body.appendChild(header);
 
 //list item function
 function createListElement(link, text){
-    var linkje = document.createElement("a");
+    var littleLink = document.createElement("a");
     var listText = document.createTextNode(text);
-    linkje.setAttribute("href", link);
-    linkje.appendChild(listText);
-    return linkje;
+    littleLink.setAttribute("href", link);
+    littleLink.appendChild(listText);
+    return littleLink;
 }
 
 //add list object function

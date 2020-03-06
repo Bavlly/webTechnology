@@ -272,3 +272,91 @@ tr:hover{
     opacity: 1;
     width: auto;
 }
+
+.row
+{
+    display: table-row;
+}
+
+.balls, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button
+{
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+    border-radius: 100px;
+}
+
+.checkbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.balls
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #ebf7fc;
+    z-index: 1;
+}
+
+#button1 .balls:before
+{
+    content: 'LIGHT';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: black;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #f0f2ed;
+    border-radius: 50%; 
+}
+
+#button1 .checkbox:checked + .balls:before
+{
+    content: 'DARK';
+    color: white;
+    left: 42px;
+    background-color: #555;
+}
+
+#button1 .checkbox:checked ~ .layer
+{
+    background-color: #fcebeb;
+}
+
+#button1 .balls, #button1 .balls:before, #button1 .layer
+{
+    transition: 0.3s ease all;
+}
