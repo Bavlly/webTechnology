@@ -20,6 +20,13 @@ body {
     background-color: rgb(57, 56, 56);
 }
 
+.dark-mode header{
+    background: repeating-linear-gradient(45deg, gray, dimgrey 20px, dimgrey 20px, dimgrey 40px);
+}
+
+.dark-mode nav a{
+    color: white;
+}
 
 
 /* navbar */
