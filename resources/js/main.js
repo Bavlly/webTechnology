@@ -89,7 +89,7 @@ var ta7 = new TA("Felix","Ant","21","male","Counting with gerard","Datastructure
 var ta8 = new TA("Mark","Dekker","21","male","Pixels","Graphics","9","3");
 
 var subject1 = new Courses("Gameprogrammeren", "INFOB1GP", "1",timeslotA, "7.5", "1",[teacher1,ta1]);
-var subject2 = new Courses("Datamining", "INFOMDM", "1",timeslotB, "7.5", "m",[teacher2,ta2]);
+var subject2 = new Courses("Datamining", "INFOMDM", "1",timeslotB, "7.5", "Master",[teacher2,ta2]);
 var subject3 = new Courses("Concurrency", "INFOB3CC", "2",timeslotC, "7.5", "3",[teacher3,ta3]);
 var subject4 = new Courses("Kunstmatige intelligentie", "INFOB2KI", "2",timeslotD, "7.5", "2",[teacher4,ta4]);
 var subject5 = new Courses("Databases", "INFODB", "3",timeslotA, "7.5", "1",[teacher5,ta5]);
@@ -138,7 +138,7 @@ function addTR (twhat,tag,tds) {
 }
 
 function addSubject(tbody,subject){
-  let tr = create("tr")
+  let tr = create("tr");
   let tds = subjectToArray(subject);
 
   createTooltip(subject.timeslot.timeslot,timeSlotText(subject.timeslot),tr);
@@ -174,7 +174,7 @@ function createTooltip(title,tiptext,parent){
   let box = create("td");
   let tooltip = create("a");
   append(box,tooltip);
-  tooltip.classList.add("tooltip")
+  tooltip.classList.add("tooltip");
   appendText(tooltip,title);
 
   let tooltipText = create("span");
@@ -185,7 +185,7 @@ function createTooltip(title,tiptext,parent){
   append(parent,box);
 }
 
-subjectToArray = subject => [subject.period, subject.code, subject.nivo, subject.ects]
+subjectToArray = subject => [subject.period, subject.code, subject.nivo, subject.ects];
 
 addTR(thead,"th",["Period","Timeslot","Code","Nivo","ects", "vak"]);
 addMultiple(tbody,[subject1 ,subject2 ,subject3 ,subject4 ,subject5 ,subject6 ,subject7 ,subject8]);
@@ -195,16 +195,39 @@ append(table,tbody);
 append(body,table);
 
 
-// 50% code
+//dark-mode
 var btn = create('button');
 var btnT = createText('Activate dark-mode');
-btn.setAttribute("id", "button")
+btn.setAttribute("id", "button");
 append(btn, btnT);
 append(body, btn);
 
 function darkmode() {
-    document.body.classList.toggle('dark-mode');
+    var confirmation = confirm("Do you really want dark mode? ");
+    if (confirmation == true){
+      document.body.classList.toggle('dark-mode');
+    } else {
+      return false;
+    }
+
 
 }
 document.getElementById("button").addEventListener("click", darkmode, false);
 
+//overlay effect
+var btnSettings = create('button');
+var btnSettingsT = createText('Change settings');
+btn.setAttribute('id', 'demo');
+append(btnSettings, btnSettingsT);
+append(body, btnSettings);
+
+function myFunction(){
+  var txt;
+  var person = prompt("Which color do you want?");
+  // if (person == null || person == ""){
+  //   txt = "user didn't change the settings";
+  // } else {
+  //   txt = "Hello" + person + "we changed everything";
+  // }
+  document.getElementById('button').addEventListener('click', myFunction, false);
+}
