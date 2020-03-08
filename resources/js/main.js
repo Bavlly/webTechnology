@@ -201,26 +201,17 @@ append(body, table);
 //darkMode
 function darkmode() {
   if (document.body.classList.contains("dark-mode")) {
-    var confirmation = confirm("Do you want to turn darkmode off? ")
-    if (confirmation == true) {
       document.body.classList.toggle("dark-mode");
       document.getElementById("color").value = "black";
       changeColor();
       document.getElementById("background").value = "white";
-      changeBackcolor();
-
-    }
+      changeBackcolor();    
   } else {
-    var confirmation = confirm("Do you really want dark mode? ");
-    if (confirmation == true) {
-
       document.body.classList.toggle('dark-mode');
       document.getElementById("color").value = "white";
       changeColor();
       document.getElementById("background").value = "black";
       changeBackcolor();
-
-    }
   }
 }
 
