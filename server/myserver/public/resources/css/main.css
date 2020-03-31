@@ -1,0 +1,377 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', 'Montserrat', sans-serif;
+  }
+
+/* navbar */
+header {
+    padding: 0px 20px;
+    background: repeating-linear-gradient(45deg, #f0f2ed, #f0f2ed 20px, #f8f4eb 20px, #f8f4eb 40px);
+    box-shadow: 0 4px 6px rgba(0,0,0,.2);
+    max-width: 100%;
+  }
+.logo-box {
+    float: left;
+    margin-right: 20px;
+  }
+.logo-box a {
+    outline: none;
+    display: block;
+  }
+.logo-box img {display: block;}
+nav {
+    overflow: hidden;
+  }
+ul {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    margin: 0;
+    padding: 15px;
+    float: inline-start;
+  }
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    float: right;
+
+  }
+nav li {
+    display: inline-block;
+    margin-left: 25px;
+    height: 70px;
+    line-height: 70px;
+    transition: .5s linear;
+  }
+nav a {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    color: #868686;
+    text-transform: uppercase;
+  }
+nav a:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    background: #868686;
+    transition: width .5s linear;  
+  }
+nav a:hover:after {width: 100%;}
+
+/* content */
+main {
+  margin: 20px;
+  overflow: hidden;
+}
+a{
+  color: #73685d;;
+}
+.logo {
+  width:auto; 
+  height:100px
+}
+.latest-news {
+  padding-left: 20px;
+}
+.normal-section{
+  text-align: left;
+  position: relative;
+  word-wrap: normal;
+  margin: 20px;
+}
+.right-side {
+    float: right;
+    width: 40%;
+    color: black;
+}
+.right-side img {
+  width: 200px;
+  height: 200px;
+}
+.left-side {
+    float: left;
+    width: 50%;
+    color: black;
+}
+
+/*dark-mode*/
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+
+.dark-mode tr:nth-child(even){
+    background-color: rgb(36, 35, 35);
+}
+
+.dark-mode th{
+    background-color: rgb(36, 35, 35);
+}
+
+.dark-mode tr:hover{
+    background-color: rgb(57, 56, 56);
+}
+
+.dark-mode header{
+    background: repeating-linear-gradient(45deg, gray, dimgrey 20px, dimgrey 20px, dimgrey 40px);
+}
+
+.dark-mode nav a{
+    color: white;
+}
+
+/* footer */
+footer {
+  display: block;
+  text-align: center;
+  font-size: 0.75em;
+  bottom:0;
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+
+/* tablet & mobile devices */
+@media screen and (max-width: 660px) {
+  header {text-align: center;}
+  .logo-box {
+    float: none;
+    display: inline-block;
+    margin: 0 0 16px 0;
+  }
+  ul {float: none;}
+  nav li:first-of-type {margin-left: 0;}
+}
+@media screen and (max-width: 250px) {
+  header {text-align: center;}
+  .logo-box {
+    float: none;
+    display: inline-block;
+    margin: 0 0 16px 0;
+  }
+  ul {float: none;}
+  nav li:first-of-type {margin-left: 0;}
+}
+@media screen and (max-width: 100px) {
+nav {overflow: visible;}
+nav li {
+  display: block;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+}
+nav li:hover {background: rgba(0,0,0,.1);}
+nav a:after {content: none;}
+}
+
+@media screen and (max-width: 890px) {
+  .left-side { float: left; width: 100%; padding-top: 20px;}
+  .right-side {float: left; width: 100%; padding-top: 20px;}
+}
+
+/* table schedule for smaller screens */
+@media screen and (max-width: 768px){
+  table,thead,tbody,th,td,tr {
+    display: block;
+  }
+
+  th {
+    text-align: right;
+    background-color: #f0f2ed;
+  }
+  
+  table{
+    width: 100%;
+    position:relative;
+    padding-bottom: 20px;
+    border-collapse: collapse;    
+  }
+
+  thead{
+    float:left;
+    white-space: nowrap;
+  }
+  
+  tbody{
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap; 
+  }
+
+  tr{
+   display: inline-block;
+   vertical-align: middle;
+  }
+  
+  .tooltiptext{
+    display:none;
+  }
+   
+}
+
+
+/* table schedule */  
+table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 20px;
+}
+td{
+  min-height: 18px;
+  padding: 20px 30px 20px 30px;
+}
+th{
+  padding: 20px 30px 20px 30px;
+  background-color: #f0f2ed ;  
+}
+tr:nth-child(even){
+  background-color: #f0f2ed;
+}
+tr:hover{
+  background-color: #f5f5f5;
+}
+
+/* label */
+label{
+  margin-left: 20px;
+}
+
+/*tooltip*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -30px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    width: auto;
+}
+
+.row
+{
+    display: table-row;
+}
+
+.balls, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button
+{
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+    border-radius: 100px;
+}
+
+.checkbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.balls
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #ebf7fc;
+    z-index: 1;
+}
+
+#button1 .balls:before
+{
+    content: 'LIGHT';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: black;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #f0f2ed;
+    border-radius: 50%; 
+}
+
+#button1 .checkbox:checked + .balls:before
+{
+    content: 'DARK';
+    color: white;
+    left: 42px;
+    background-color: #555;
+}
+
+#button1 .checkbox:checked ~ .layer
+{
+    background-color: #fcebeb;
+}
+
+#button1 .balls, #button1 .balls:before, #button1 .layer
+{
+    transition: 0.3s ease all;
+}
+
+select{
+    background-color: lightgrey;
+    border: none;
+
+}
+
