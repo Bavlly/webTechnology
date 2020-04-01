@@ -4,6 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//database
+// app.get('/courses1', (req, res) => {
+//   console.log("Responding to root route");
+//   res.send("Hello from root");
+// })
+
+
 // var indexRouter = require('./routes/index');
 var indexRouter = require('./routes/index'); //homepage
 // var usersRouter = require('./routes/users');
@@ -12,6 +19,7 @@ var concurrencyRouter = require('./routes/concurrency');
 var descriptionRouter = require('./routes/description');
 var infoRouter = require('./routes/info');
 var scheduleRouter = require('./routes/schedule');
+var coursesRouter = require('./routes/courses');
 
 
 var app = express();
@@ -33,12 +41,13 @@ app.use('/concurrency', concurrencyRouter);
 app.use('/description', descriptionRouter);
 app.use('/info', infoRouter);
 app.use('/schedule', scheduleRouter);
+app.use('/courses', coursesRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+// next(createError(404));
+// });
 
 // error handler
 app.use(function(err, req, res, next) {

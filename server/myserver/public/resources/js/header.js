@@ -46,6 +46,8 @@ var descriptionLink = createListElement("description", "Description");
 addListObject(list, descriptionLink);
 var infoLink = createListElement("info", "Information");
 addListObject(list, infoLink);
+var coursesLink = createListElement("courses", "Courses");
+addListObject(list, coursesLink);
 nav.appendChild(list);
 header.appendChild(nav);
 
