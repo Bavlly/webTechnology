@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const sqlite3 = require('sqlite3').verbose();
+
+
 
 //database
 // app.get('/courses1', (req, res) => {

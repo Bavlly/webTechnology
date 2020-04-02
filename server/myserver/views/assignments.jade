@@ -1,0 +1,51 @@
+doctype html
+// assignments
+html(lang='en')
+  head
+    title Educator
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='Description', content='Find more detailed information about your assignments')
+    link(rel='stylesheet', type='text/css', href='resources/css/main.css')
+    meta(charset='utf-8')
+  body
+    header
+      .logo-box
+        a(href='/')
+          img.logo(src='resources/Images/logo.png', alt='Logo')
+      nav
+        ul.navbar
+          li
+            a(href='/') Home
+          li
+            a(href='concurrency') Concurrency
+          li
+            a(href='schedule') Schedule
+          li
+            a(href='assignments') Assignments
+          li
+            a(href='description') Description
+          li
+            a(href='info') Information
+          li
+            a(href='courses') Courses
+    section.normal-section
+      h1 Assignments
+      p
+        | The assignments can be found below, for the deadlines check the 
+        a(href='schedule') Schedule
+      ul
+        li  Assignment 1: Threading
+        li  Assignment 2: Concurrency control
+        li  Assignment 3: Network Flow
+      h1 Working Collages
+      ul
+        li  01: Haskell refresh
+        li  02: Threads
+        li  03: Mvars
+        li  04: STM
+        li  05: Parallelism
+        li  06: Work & Span
+        li  07: Data Parallelism.1
+        li  08: Data Parallelism.2
+    footer
+      | © Utrecht University 2020

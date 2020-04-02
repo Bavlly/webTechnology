@@ -1,0 +1,55 @@
+doctype html
+// Index
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Educator
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='Description', content='Looking for anything about your course, look on this website for all the information')
+    link(rel='stylesheet', type='text/css', href='resources/css/main.css')
+  body
+    header
+      .logo-box
+        a(href='/')
+          img.logo(src='resources/Images/logo.png', alt='Logo')
+      nav
+        ul.navbar
+          li
+            a(href='/') Home
+          li
+            a(href='concurrency') Concurrency
+          li
+            a(href='schedule') Schedule
+          li
+            a(href='assignments') Assignments
+          li
+            a(href='description') Description
+          li
+            a(href='info') Information
+          li
+            a(href='courses') Courses
+    main
+      section.left-side
+        h1 Welkom
+        p Welcome to the course website for Concurrency.
+        p
+          | This course will be taught to you by the one and only Trevor L. McDonnell, a young and enthusiastic teacher for courses involving functional programming.
+        p Some things about Trevor that make him an excellent teacher for this course:
+        p
+          | - Trevor is a big fan of working with examples during lectures, after talking about a certain way to program something (usually in pseudo code) Trevor will show show his programming on the screen and will show what was discussed using an example, asking the students if they know what's going on and if they know what they have to do.
+        p
+          | - Trevor is also a very fast typer, when showing examples on screen the students will not have to wait a long time before Trevor has put up his entire example in no-time.
+        p
+          | - This course teacher has a very nice and clear voice, he has a way of talking in a very calm and relaxed way, often making small gestures with his hands to stress certain words, making it effortless for the students to listen and follow what their teacher is discussing.
+        p
+          | - But the last and most important thing about Trevor that makes him an excellent teacher is his love for dogs, or more specific, his love for motivating his students using the cutest pictures of dogs he can find and putting those on the last slides of his lectures, for some students this is what kept them coming to the lectures the most.
+        br
+        p
+          | If all the highlights listed above have not convinced you as a reader of the compatibility of Trevor as the teacher of this course, we highly suggest you to look at the right side of this page and look at the man himself, below the picture of Trevor there is a link that will direct you to his personal page on the website of Utrecht University. We hope that after this you will be convinced of the capabilities and general awesomeness of this man.
+      section.right-side
+        h1 Hi there, my name is Trevor :)
+        img(src='resources/images/Trevor.jpg', alt='A beautiful picture of the main teacher of this course.')
+        p.personal-page
+          a(href='https://www.uu.nl/medewerkers/TLMcDonell/Onderwijs') My personal page
+    footer
+      | © Utrecht University 2020
