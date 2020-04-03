@@ -5,15 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const sqlite3 = require('sqlite3').verbose();
 
-
-
-//database
-// app.get('/courses1', (req, res) => {
-//   console.log("Responding to root route");
-//   res.send("Hello from root");
-// })
-
-
 // var indexRouter = require('./routes/index');
 var indexRouter = require('./routes/index'); //homepage
 // var usersRouter = require('./routes/users');

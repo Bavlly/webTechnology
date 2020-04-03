@@ -29,6 +29,38 @@ html(lang='en')
           li
             a(href='courses') Courses
     main
-    p welkom to #{title}
+    h2 Find here all the courses we teach
+
+    table
+      thead
+        tr
+          th Title
+          th Program
+          th Academic Level
+          th Semester
+          th Description
+          th Teacher
+          th Picture
+      tbody
+        each item in course
+          tr
+            td=item.Title
+            td=item.Program
+            td=item.Academic_level
+            td=item.Semester
+            td=item.Description
+            td=item.Teacher
+            td=item.Picture
+
+
+
+
+    //thead
+    //  tr: th Courses
+    //tbody
+    //  each course in title
+    //    tr
+    //      td= course
+
     footer
       | © Utrecht University 2020
