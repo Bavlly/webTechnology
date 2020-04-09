@@ -29,17 +29,17 @@ router.get('/', function(req, res, next) {
 //         console.log("in login")
 //     })
 //GET
-//     let sql = "SELECT * FROM Courses";
-//     db.all(sql, [], (err, rows) => {
-//         if (err) {
-//             throw err;
-//         }
-//         res.render('login_form', { course: rows})
-//     });
-//
-//     // close the database connection
-//     db.close();
-//     console.log("In COURSES!");
+    let sql = "SELECT * FROM Courses";
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.render('login_form', { course: rows})
+    });
+
+    // close the database connection
+    db.close();
+    console.log("In COURSES!");
 });
 
 module.exports = router;
