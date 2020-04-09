@@ -35,11 +35,31 @@ html(lang='en')
     section.right-side
         a(href='login_form') Login
 
-    table
+    form
+     label(for='search_label') Search:
+     input#search(type='text', name='search')
+     label(for='program_label') Program:
+     select#program
+       option(value='any') Any
+       option(value='computer science') Computer Science
+       option(value='information science') Information Science
+       option(value='mathematics') Mathematics
+     label(for='semester_label') Semester:
+     select#semester
+       option(value='any') Any
+       option(value='1') 1
+       option(value='2') 2
+     label(for='level_label') Level:
+     select#level
+       option(value='any') Any
+       option(value='BSc') BSc
+       option(value='MSc') MSc
+
+    table#coursetable
       thead
         tr
+          th Code
           th Title
-          th Program
           th Academic Level
           th Semester
           th Description
@@ -55,6 +75,8 @@ html(lang='en')
             td=item.Description
             td=item.Teacher
             td=item.Picture
-
+    
+   
+    script(src='resources/js/course.js')
     footer
       | © Utrecht University 2020
