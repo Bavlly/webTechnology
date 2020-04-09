@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 
 // var indexRouter = require('./routes/index');
@@ -15,6 +16,7 @@ var infoRouter = require('./routes/info');
 var scheduleRouter = require('./routes/schedule');
 var coursesRouter = require('./routes/courses');
 var loginRouter = require('./routes/login');
+var dashboardRouter = require('./routes/dashboard');
 
 
 var app = express();
@@ -38,7 +40,16 @@ app.use('/info', infoRouter);
 app.use('/schedule', scheduleRouter);
 app.use('/courses', coursesRouter);
 app.use('/login_form', loginRouter);
+app.use('/dashboard', dashboardRouter);
 
+app.get('/login_form', function (req, res) {
+  res.render('login_form')
+});
+
+app.post('/login_form', function(req, res){
+  console.log(req.body);
+  res.send("received your request!");
+});
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

@@ -1,0 +1,54 @@
+doctype html
+// assignments
+html(lang='en')
+    head
+        title Educator
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='Description', content='Find more detailed information about your assignments')
+        link(rel='stylesheet', type='text/css', href='resources/css/main.css')
+        meta(charset='utf-8')
+    body
+        header
+            .logo-box
+                a(href='/')
+                    img.logo(src='resources/Images/logo.png', alt='Logo')
+            nav
+                ul.navbar
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='concurrency') Concurrency
+                    li
+                        a(href='schedule') Schedule
+                    li
+                        a(href='assignments') Assignments
+                    li
+                        a(href='description') Description
+                    li
+                        a(href='info') Information
+                    li
+                        a(href='courses') Courses
+
+        table
+            thead
+                tr
+                    th Title
+                    th Program
+                    th Academic Level
+                    th Semester
+                    th Description
+                    th Teacher
+                    th Picture
+            tbody
+                each item in course
+                    tr
+                        td=item.Title
+                        td=item.Program
+                        td=item.Academic_level
+                        td=item.Semester
+                        td=item.Description
+                        td=item.Teacher
+                        td=item.Picture
+
+        footer
+            | © Utrecht University 2020
