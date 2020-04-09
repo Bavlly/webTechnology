@@ -375,3 +375,10 @@ select{
 
 }
 
+form {
+    margin: 20px;
+}
+
+p {
+    margin: 1px;
+}
