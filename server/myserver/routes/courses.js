@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
      if(semester != "any" &&  semester !== null)
        where+= "Semester = " + semester+ " AND " ;
      if(level != "any" && level !== null)
-      where+= "Level = '" + level + "' AND ";
+      where+= "Academic_level = '" + level + "' AND ";
     if(program != "any" && program !== null)
       where+= "Program = '" + program + "' AND ";
     
