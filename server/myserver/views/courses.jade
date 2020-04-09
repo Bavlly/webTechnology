@@ -41,9 +41,9 @@ html(lang='en')
      label(for='program_label') Program:
      select#program
        option(value='any') Any
-       option(value='computer science') Computer Science
-       option(value='information science') Information Science
-       option(value='mathematics') Mathematics
+       option(value='Computer science') Computer Science
+       option(value='Information science') Information Science
+       option(value='Mathematics') Mathematics
      label(for='semester_label') Semester:
      select#semester
        option(value='any') Any
@@ -60,6 +60,7 @@ html(lang='en')
         tr
           th Code
           th Title
+          th Program
           th Academic Level
           th Semester
           th Description
@@ -68,6 +69,7 @@ html(lang='en')
       tbody
         each item in course
           tr
+            td=item.Code
             td=item.Title
             td=item.Program
             td=item.Academic_level
