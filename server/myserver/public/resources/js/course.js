@@ -1,5 +1,3 @@
-console.log("ohhhhhh");
-
 const create = tag => document.createElement(tag);
 const createText = str => document.createTextNode(str);
 const append = (a, b) => a.appendChild(b);
@@ -13,7 +11,6 @@ function handleSearch(){
  var program = document.getElementById("program").value;
  var search = document.getElementById("search").value;
 
- console.log("FETCHING DATA");
  const Http = new XMLHttpRequest();
 
  const url='http://localhost:3000/courses?search=' + search + '&program=' + program + '&semester=' + semester + '&level=' + level;
@@ -22,7 +19,6 @@ function handleSearch(){
  
  Http.onreadystatechange = function(){
  if(this.readyState==4 && this.status==200){
-       console.log(this.response); 
         let table= document.getElementById('coursetable');
         table.remove();
         buildTable(JSON.parse(this.response));
@@ -37,11 +33,8 @@ function buildTable(courses){
     let tbody = create("tbody");
 
     addTR(thead,"th",["Code","Title","Program","Academic Level","Semester","Description","Teacher","Picture"]);
-    console.log(courses)
-    console.log(courses[0]);
     for(let course of courses){
         //var
-        //console.log(course);
         addTR(tbody,"td", [course.Code, course.Title, course.Program,course.Academic_level,course.Semester,course.Description,course.Teacher,course.Picture]);
     }
 

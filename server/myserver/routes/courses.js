@@ -5,13 +5,10 @@ const sqlite3 = require('sqlite3').verbose();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    console.log(req.session)
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
     if (err) {
-        console.log("CANNOT CONNECT!!!!!!!!!!");
         return console.error(err.message);
     }
-    console.log('Connected to the SQlite database.');
 });
 
 //GET
@@ -19,10 +16,8 @@ router.get('/', function(req, res, next) {
     var level = req.query.level ? req.query.level : null;
     var program = req.query.program ? req.query.program : null;
     var semester = req.query.semester ? req.query.semester : null;
-    console.log(search);
     
      let where = " WHERE ";
-    console.log(semester !== null);
      if(semester != "any" &&  semester !== null)
        where+= "Semester = " + semester+ " AND " ;
      if(level != "any" && level !== null)
@@ -37,7 +32,6 @@ router.get('/', function(req, res, next) {
     if(where.length ==7)
      where+= "1=1";
     let sql = "SELECT* FROM Courses" + where;
-    console.log(sql);
     db.all(sql, [], (err, rows) => {
         if (err) {
             throw err;
@@ -45,14 +39,12 @@ router.get('/', function(req, res, next) {
         if(program == null)
         res.render('courses', { course: rows});
         else{
-        console.log("eurobeat");
         res.json(rows);
         }
     });
 
     // close the database connection
     db.close();
-    console.log("In COURSES!");
 });
 
 module.exports = router;

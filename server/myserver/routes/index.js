@@ -31,9 +31,8 @@ router.get('/schedule', (req, res, next) => {
 router.post('/coursePlus', (req, res, next) => {
   let db = new sqlite3.Database('./db.sqlite3', (err) => {
     if (err) {
-        console.log("CANNOT CONNECT!!!!!!!!!!");
         return console.error(err.message);
-    }console.log('Connected to the SQlite database.');
+    }
      var b = req.body;
     db.run("INSERT INTO Registered_Courses(Student_Id, Code, Title, Program, Academic_Level, Semester, Description, Teacher) VALUES (? , ? , ? , ? , ? , ? , ?, ?)",
     [   String(b.Student_Id),
@@ -60,9 +59,8 @@ router.post('/coursePlus', (req, res, next) => {
 router.get('/registeredCourses', (req, res, next) => {
   let db = new sqlite3.Database('./db.sqlite3', (err) => {
     if (err) {
-        console.log("CANNOT CONNECT!!!!!!!!!!");
         return console.error(err.message);
-    }console.log('Connected to the SQlite database.');
+    }
     let sql = "SELECT* FROM Registered_Courses WHERE Student_Id ='" + req.session.username+ "'";
     db.all(sql, [], (err, rows) => {
       if (err) {
@@ -70,7 +68,6 @@ router.get('/registeredCourses', (req, res, next) => {
       }
       else{
       res.render('/registeredCourses', { course: rows});
-      console.log("eurobeat");
      } 
   });
   });
@@ -82,10 +79,8 @@ router.get('/account', (req, res, next) => {
   //db connect
   let db = new sqlite3.Database('./db.sqlite3', (err) => {
   if (err) {
-      console.log("CANNOT CONNECT!!!!!!!!!!");
       return console.error(err.message);
   }
-  console.log('Connected to the SQlite database.');
   //search op req.session.username
   });
   var userid = req.session.username;
@@ -94,7 +89,6 @@ router.get('/account', (req, res, next) => {
     if (err) {
         throw err;
     }
-    console.log(rows);
     res.render('account', { account: rows});
     });
   });
@@ -102,7 +96,6 @@ router.get('/account', (req, res, next) => {
   router.post('/account', function(req, res) {
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
-            console.log("CANNOT CONNECT!!!!!!!!!!");
             return console.error(err.message);
         };
         var b = req.body;
@@ -124,8 +117,6 @@ router.get('/account', (req, res, next) => {
             update = update.slice(0, -2);
             update += "WHERE Student_Id=" + req.session.username;
            
-            console.log(req.session)
-            console.log(update);
             db.run(update , [], function(err, row) {
                 if (err) {
                     // req.session.create = -1;

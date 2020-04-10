@@ -16,10 +16,8 @@ var app = express();
 // router.get('/', function(req, res, next) {
 //     let db = new sqlite3.Database('./db.sqlite3', (err) => {
 //         if (err) {
-//             console.log("CANNOT CONNECT!!!!!!!!!!");
 //             return console.error(err.message);
 //         }
-//         console.log('Connected to the SQlite database.');
 //     });
 //
 // //POST
@@ -36,7 +34,6 @@ var app = express();
 // //         stmt.finalize();
 // //q
 // //         db.each("SELECT id, dt FROM user", function(err, row) {
-// //             console.log("User id : "+row.id, row.dt);
 // //         });
 // //     });
 // //
@@ -48,7 +45,6 @@ var app = express();
 router.post('/registration', function (req, res) {
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
-            console.log("CANNOT CONNECT!!!!!!!!!!");
             return console.error(err.message);
         }
         var b = req.body;
@@ -77,7 +73,6 @@ router.post('/registration', function (req, res) {
 router.post('/login', function(req, res){
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
-            console.log("CANNOT CONNECT!!!!!!!!!!");
             return console.error(err.message);
         }
 
@@ -88,16 +83,13 @@ router.post('/login', function(req, res){
 
     if (user && pass) {
         let sql = 'SELECT * FROM Users WHERE Student_Id = "' + user + '" AND Password = "' + pass+ '"';
-        console.log(sql);
 		db.all(sql, [], function(error, rows,) {
 			if (rows.length > 0) {
 				req.session.loggedin = true;
 				req.session.username = user;
                 res.redirect('/dashboard');
-                console.log("logged in");
 			} else {                
-                res.redirect('/login');      
-                console.log("oh nee toch waarom gaat alles fout als je blieft god help");
+                res.redirect('/login');
 			}			
         });
      }});
