@@ -5,6 +5,7 @@ const sqlite3 = require('sqlite3').verbose();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    console.log(req.session)
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
     if (err) {
         console.log("CANNOT CONNECT!!!!!!!!!!");
