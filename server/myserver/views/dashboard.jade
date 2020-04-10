@@ -30,7 +30,42 @@ html(lang='en')
                         a(href='courses') Courses
 
 
-        table
+
+        p
+        section.navbar
+            button.link(onclick='clickMe()') Registered Courses
+            button.link(onclick='clickMe()') Account
+            button.link(onclick='clickMe()') Logout
+
+            script.
+                function clickMe() {
+                    alert('Are you sure you want to log out ?')
+                }
+
+
+        form
+            label(for='search_label') Search:
+            input#search(type='text', name='search')
+            label(for='program_label') Program:
+            select#program
+                option(value='any') Any
+                option(value='Computer science') Computer Science
+                option(value='Information science') Information Science
+                option(value='Mathematics') Mathematics
+            label(for='semester_label') Semester:
+            select#semester
+                option(value='any') Any
+                option(value='1') 1
+                option(value='2') 2
+            label(for='level_label') Level:
+            select#level
+                option(value='any') Any
+                option(value='BSc') BSc
+                option(value='MSc') MSc
+
+
+
+        table#coursetable
             thead
                 tr
                     th Title
@@ -53,5 +88,7 @@ html(lang='en')
                             button add course
                             button delete course
 
+
+        script(src='resources/js/course.js')
         footer
             | © Utrecht University 2020
