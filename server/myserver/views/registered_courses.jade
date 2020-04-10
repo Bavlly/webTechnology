@@ -1,0 +1,80 @@
+doctype html
+//Registered courses
+html(lang='en')
+  head
+    title Educator
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='Description', content='Here you can find the information about the courses you have registered for')
+    link(rel='stylesheet', type='text/css', href='resources/css/main.css')
+  body
+    header
+      .logo-box
+        a(href='/')
+          img.logo(src='resources/Images/logo.png', alt='Logo')
+      nav
+        ul.navbar
+          li
+            a(href='/') Home
+          li
+            a(href='concurrency') Concurrency
+          li
+            a(href='schedule') Schedule
+          li
+            a(href='assignments') Assignments
+          li
+            a(href='description') Description
+          li
+            a(href='info') Information
+          li
+            a(href='courses') Courses
+
+    p
+    section.navbar
+        button.link(onclick= "location.href='http://localhost:3000/dashboard'") Dashboard
+        button.link(onclick= "location.href='http://localhost:3000/Account'") Account
+        button.link(onclick='logout();') Logout
+
+        script.
+            function logout() {
+                console.log("YOOOOO");
+                const Http = new XMLHttpRequest();
+
+                const url='http://localhost:3000/dashboard/logout';
+                Http.open("GET", url);
+                Http.send();
+
+                Http.onreadystatechange = function(){
+                if(this.readyState==4 && this.status==200){
+                    window.location.href ='http://localhost:3000/login';  
+                    console.log(this.response);           
+                    }
+                    }
+            }
+
+            
+    section.left-side
+      h2 Find here the courses you registered for
+      p
+
+    table#coursetable
+      thead
+        tr
+          th Code
+          th Title
+          th Program
+          th Academic Level
+          th Semester
+          th Description
+          th Teacher
+        
+      tbody
+        each item in course
+          tr
+            td=item.Code
+            td=item.Title
+            td=item.Program
+            td=item.Academic_level
+            td=item.Semester
+            td=item.Description
+            td=item.Teacher
+           

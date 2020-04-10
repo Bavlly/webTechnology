@@ -34,7 +34,7 @@ var app = express();
 // //             stmt.run(i, n);
 // //         }
 // //         stmt.finalize();
-// //
+// //q
 // //         db.each("SELECT id, dt FROM user", function(err, row) {
 // //             console.log("User id : "+row.id, row.dt);
 // //         });
@@ -52,7 +52,7 @@ router.post('/registration', function (req, res) {
             return console.error(err.message);
         }
         var b = req.body;
-        db.all("INSERT INTO Users (Student_Id, First_Name, Last_Name, email, Academic_Level, Program, Password) VALUES (? , ? , ? , ? , ? , ? , ? )",
+        db.run("INSERT INTO Users (Student_Id, First_Name, Last_Name, email, Academic_Level, Program, Password) VALUES (? , ? , ? , ? , ? , ? , ? )",
             [   String(b.Student_Id),
                 String(b.First_Name),
                 String(b.Last_Name),
@@ -71,7 +71,6 @@ router.post('/registration', function (req, res) {
             // res.render('dashboard', {user: String})
         });
     });
-
 });
 
 

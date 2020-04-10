@@ -29,29 +29,52 @@ html(lang='en')
                     li
                         a(href='courses') Courses
 
-  body
-    h3 User profile
-      form#account
-        p First Name
-        input#account(type='text', name='First_Name', placeholder='Henk')
-        p Last Name
-        input#account(type='text', name='Last_Name', placeholder='van Tongen')
-        p Email:
-        input#account(type='email', name='email', placeholder='welkom@uu.students.nl')
-        p Password:
-        input#account(type='password' name='Password' placeholder='enter password')
-        p Academic level:
-        select#account(name='Academic_Level')
-            option(value='BSc') BSc
-            option(value='MSc') MSc
-        p Program:
-        select#account(name='Program')
-            option(value='Computer science') Computer science
-            option(value='Database') Database
-            option(value='Security') Security
-            option(value='Multi-agent systems') Multi-agent systems
-        br
-        input#account(type='submit', value='Submit')
+        p
+        section.navbar
+            button.link(onclick='registrations();') Registered Courses
+            button.link(onclick= "location.href='http://localhost:3000/dashboard'") Dashboard
+            button.link(onclick='logout();') Logout
+
+            script.
+                function logout() {
+                    console.log("YOOOOO");
+                    const Http = new XMLHttpRequest();
+
+                    const url = 'http://localhost:3000/dashboard/logout';
+                    Http.open("GET", url);
+                    Http.send();
+
+                    Http.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            window.location.href = 'http://localhost:3000/login';
+                            console.log(this.response);
+                        }
+                    }
+                }
+
+      body
+        h3 User profile
+          form#account(action='/account'  method='POST')
+            p First Name
+            input#account(type='text', name='First_Name', placeholder=account[0].First_Name)
+            p Last Name
+            input#account(type='text', name='Last_Name', placeholder=account[0].Last_Name)
+            p Email:
+            input#account(type='email', name='email', placeholder=account[0].email)
+            p Password:
+            input#account(type='password' name='Password' placeholder=account[0].Password)
+            p Academic level:
+            select#account(name='Academic_Level')
+                option(value='BSc') BSc
+                option(value='MSc') MSc
+            p Program:
+            select#account(name='Program')
+                option(value='Computer science') Computer science
+                option(value='Database') Database
+                option(value='Security') Security
+                option(value='Multi-agent systems') Multi-agent systems
+            br
+            input#account(type='submit', value='Submit')
         
 
 
