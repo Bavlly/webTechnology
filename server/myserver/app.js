@@ -8,12 +8,6 @@ const sqlite3 = require('sqlite3').verbose();
 
 // var indexRouter = require('./routes/index');
 var indexRouter = require('./routes/index'); //homepage
-// var usersRouter = require('./routes/users');
-// var assignmentsRouter = require('./routes/assignments');
-// var concurrencyRouter = require('./routes/concurrency');
-// var descriptionRouter = require('./routes/description');
-// var infoRouter = require('./routes/info');
-// var scheduleRouter = require('./routes/schedule');
 var coursesRouter = require('./routes/courses');
 var loginRouter = require('./routes/login');
 var dashboardRouter = require('./routes/dashboard');
@@ -32,12 +26,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-// app.use('/assignments', assignmentsRouter);
-// app.use('/concurrency', concurrencyRouter);
-// app.use('/description', descriptionRouter);
-// app.use('/info', infoRouter);
-// app.use('/schedule', scheduleRouter);
 app.use('/courses', coursesRouter);
 app.use('/login', loginRouter);
 app.use('/dashboard', dashboardRouter);
@@ -52,9 +40,9 @@ app.post('/login', function(req, res){
 });
 
 // catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-// next(createError(404));
-// });
+app.use(function(req, res, next) {
+next(createError(404));
+});
 
 // error handler
 app.use(function(err, req, res, next) {

@@ -1,51 +1,52 @@
 const path = require('path');
+const databaseConnection = require('./database');
 const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    let db = new sqlite3.Database('./db.sqlite3', (err) => {
-        if (err) {
-            console.log("CANNOT CONNECT!!!!!!!!!!");
-            return console.error(err.message);
-        }
-        console.log('Connected to the SQlite database.');
-    });
-
-//POST
-//     db.serialize(function() {
-//         // db.run("CREATE TABLE users (id INT, dt TEXT)");
-//
-//         var stmt = db.prepare("INSERT INTO Users VALUES (?,?,?,?,?,?,?)");
-//         for (var i = 0; i < 10; i++) {
-//
-//             var d = new Date();
-//             var n = d.toLocaleTimeString();
-//             stmt.run(i, n);
+// router.get('/', function(req, res, next) {
+//     let db = new sqlite3.Database('./db.sqlite3', (err) => {
+//         if (err) {
+//             console.log("CANNOT CONNECT!!!!!!!!!!");
+//             return console.error(err.message);
 //         }
-//         stmt.finalize();
-//
-//         db.each("SELECT id, dt FROM user", function(err, row) {
-//             console.log("User id : "+row.id, row.dt);
-//         });
+//         console.log('Connected to the SQlite database.');
 //     });
 //
+// //POST
+// //     db.serialize(function() {
+// //         // db.run("CREATE TABLE users (id INT, dt TEXT)");
+// //
+// //         var stmt = db.prepare("INSERT INTO Users VALUES (?,?,?,?,?,?,?)");
+// //         for (var i = 0; i < 10; i++) {
+// //
+// //             var d = new Date();
+// //             var n = d.toLocaleTimeString();
+// //             stmt.run(i, n);
+// //         }
+// //         stmt.finalize();
+// //
+// //         db.each("SELECT id, dt FROM user", function(err, row) {
+// //             console.log("User id : "+row.id, row.dt);
+// //         });
+// //     });
+// //
+// //     db.close();
+//
+// //GET
+//     let sql = "SELECT * FROM Users";
+//     db.all(sql, [], (err, rows) => {
+//         if (err) {
+//             throw err;
+//         }
+//         res.render('login', { Users: rows})
+//     });
+//
+//     // close the database connection
 //     db.close();
-
-//GET
-    let sql = "SELECT * FROM Users";
-    db.all(sql, [], (err, rows) => {
-        if (err) {
-            throw err;
-        }
-        res.render('login', { Users: rows})
-    });
-
-    // close the database connection
-    db.close();
-    console.log("In Login!");
-});
+//     console.log("In Login!");
+// });
 
 router.post('/', function (req, res) {
     let db = new sqlite3.Database('./db.sqlite3', (err) => {

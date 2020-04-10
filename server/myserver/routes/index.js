@@ -25,7 +25,6 @@ router.get('/info', (req, res, next) => {
   res.render('info');
 });
 
-
 router.get('/schedule', (req, res, next) => {
   res.render('schedule');
 });
