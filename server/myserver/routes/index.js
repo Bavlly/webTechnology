@@ -35,8 +35,8 @@ router.post('/coursePlus', (req, res, next) => {
         return console.error(err.message);
     }console.log('Connected to the SQlite database.');
      var b = req.body;
-    db.run("INSERT INTO Registered_Courses(Student_Id, Code, Title, Program, Academic_Level, Semester, Description, Teacher) VALUES (? , ? , ? , ? , ? , ? , ?, ?)",
-    [   String(b.Student_Id),
+     db.run("INSERT INTO Registered_Courses(Student_Id, Code, Title, Program, Academic_Level, Semester, Description, Teacher) VALUES (? , ? , ? , ? , ? , ? , ?, ?)",
+    [   String(req.session.username),
         String(b.Code),
         String(b.Title),
         String(b.Program),

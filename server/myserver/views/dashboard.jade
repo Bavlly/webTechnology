@@ -31,7 +31,7 @@ html(lang='en')
 
         p
         section.navbar
-            button.link(onclick='registrations();') Registered Courses
+            button.link(onclick="location.href='http://localhost:3000/RegisteredCourses'") Registered Courses
             button.link(onclick= "location.href='http://localhost:3000/Account'") Account
             button.link(onclick='logout();') Logout
 
@@ -77,7 +77,8 @@ html(lang='en')
 
         table#coursetable
             thead
-                tr
+                tr 
+                    th Code
                     th Title
                     th Program
                     th Academic Level
@@ -88,6 +89,7 @@ html(lang='en')
             tbody
                 each item in course
                     tr
+                        td=item.Code
                         td=item.Title
                         td=item.Program
                         td=item.Academic_level
@@ -99,6 +101,6 @@ html(lang='en')
                             button#remove delete course
 
 
-        script(src='resources/js/course.js')
+     script(src='resources/js/RegisteredCourses.js')
         footer
             | © Utrecht University 2020
