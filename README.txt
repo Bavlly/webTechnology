@@ -1,16 +1,87 @@
 CONTENTS OF THIS FILE
 ---------------------
 
-Getting Started
+Group id: group 42
+------------------
+
+Names and student numbers of all authors:
+Bavlly Fanous - 7064640
+Melvin Leijdsman - 6231802
+Carlo Kottier - 6601227
+
+-----------------------
+
+Direct link to the location of the website:
+//insert link here
+------------------
+
+Brief explanation of our web-site, and the structure or our application:
+
+//brief explanation of our web-site
+
+.
+├── resources
+|   ├── css
+|   └── images
+├── server
+|   ├── myserver
+|       ├── bin
+|       ├── node_modules
+|       ├── public
+|       ├── routes
+|       ├── views
+|       ├── app.js
+|       ├── db.sqlite3
+|       ├── package-lock.json
+|       └── package.json
+|   ├── package-lock.json
+|   └── package.json
+├── package-lock.json
+└── README.txt
+
+//the structure of our database (?)
+-----------------------------------
+
+Logins and passwords of all registered users:
+
+//insert this
+--------------
+
+SQL definition of our database:
+
+CREATE TABLE Courses (
+    Code           STRING,
+    Title          STRING,
+    Program        STRING,
+    Academic_level STRING (3),
+    Semester       INTEGER,
+    Description    STRING,
+    Teacher        STRING,
+    Picture        STRING
+);
+
+CREATE TABLE Users (
+    Student_Id     INTEGER (6),
+    First_Name     STRING (25),
+    Last_Name      STRING (25),
+    email          STRING (100),
+    Password       STRING (100),
+    Academic_Level STRING (3),
+    Program        STRING (100) 
+);
+---------------
+
+Extra features implemented:
+
+//insert if applicable
 ---------------
 
 This program is mainly focused on web developing of a course for University Utrecht.
 
 ----------------
-Folder Structure
-----------------
+
 .
-├── resources               # All Javascrip, images and styling files
+├── resources               # All Javascript, images and styling files
 │   ├── css                 # All styling files
 │   ├── images              # All images (Like logo)
 │   └── js                  # All javascript files (header.js & main.js & footer.js)
