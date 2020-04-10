@@ -19,7 +19,7 @@ router.get('/logout', function(req, res, next) {
   });
 
 router.get('/', function(req, res, next) {
-    if(req.session===defined){
+    if(req.session){
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
             console.log("CANNOT CONNECT!!!!!!!!!!");
@@ -46,7 +46,7 @@ else res.redirect('/login');
 
 
 router.post('/', function (req, res) {
-    if(req.session === defined){
+    if(req.session){
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
             console.log("CANNOT CONNECT!!!!!!!!!!");
