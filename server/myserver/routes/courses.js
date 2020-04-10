@@ -42,7 +42,7 @@ router.get('/', function(req, res, next) {
             throw err;
         }
         if(program == null)
-        res.render('courses', { course: rows})
+        res.render('courses', { course: rows});
         else{
         console.log("eurobeat");
         res.json(rows);

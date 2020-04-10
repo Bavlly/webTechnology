@@ -382,3 +382,22 @@ form {
 p {
     margin: 1px;
 }
+
+button {
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+button.link {
+    border-radius: 4px;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}

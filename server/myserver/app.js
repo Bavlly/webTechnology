@@ -4,15 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var lessMiddleware = require('less-middleware'); // new
+var session = require('express-session'); // new
 const sqlite3 = require('sqlite3').verbose();
 
-// var indexRouter = require('./routes/index');
+//Routes
 var indexRouter = require('./routes/index'); //homepage
 var coursesRouter = require('./routes/courses');
 var loginRouter = require('./routes/login');
 var dashboardRouter = require('./routes/dashboard');
-
-
 var app = express();
 
 // view engine setup
@@ -23,6 +23,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
