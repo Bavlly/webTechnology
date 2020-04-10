@@ -29,6 +29,7 @@ html(lang='en')
                     li
                         a(href='courses') Courses
 
+
         table
             thead
                 tr
@@ -38,7 +39,7 @@ html(lang='en')
                     th Semester
                     th Description
                     th Teacher
-                    th Picture
+                    th Action
             tbody
                 each item in course
                     tr
@@ -48,7 +49,9 @@ html(lang='en')
                         td=item.Semester
                         td=item.Description
                         td=item.Teacher
-                        td=item.Picture
+                        td
+                            button add course
+                            button delete course
 
         footer
             | © Utrecht University 2020

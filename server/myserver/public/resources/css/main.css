@@ -382,3 +382,11 @@ form {
 p {
     margin: 1px;
 }
+
+button {
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
