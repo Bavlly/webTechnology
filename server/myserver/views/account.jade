@@ -1,0 +1,60 @@
+doctype html
+
+html(lang='en')
+    head
+        title Educator
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='Description', content='Find more detailed information about your assignments')
+        link(rel='stylesheet', type='text/css', href='resources/css/main.css')
+        meta(charset='utf-8')
+    body
+        header
+            .logo-box
+                a(href='/')
+                    img.logo(src='resources/Images/logo.png', alt='Logo')
+            nav
+                ul.navbar
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='concurrency') Concurrency
+                    li
+                        a(href='schedule') Schedule
+                    li
+                        a(href='assignments') Assignments
+                    li
+                        a(href='description') Description
+                    li
+                        a(href='info') Information
+                    li
+                        a(href='courses') Courses
+
+  body
+    h3 User profile
+      form#account
+        p First Name
+        input#account(type='text', name='First_Name', placeholder='Henk')
+        p Last Name
+        input#account(type='text', name='Last_Name', placeholder='van Tongen')
+        p Email:
+        input#account(type='email', name='email', placeholder='welkom@uu.students.nl')
+        p Password:
+        input#account(type='password' name='Password' placeholder='enter password')
+        p Academic level:
+        select#account(name='Academic_Level')
+            option(value='BSc') BSc
+            option(value='MSc') MSc
+        p Program:
+        select#account(name='Program')
+            option(value='Computer science') Computer science
+            option(value='Database') Database
+            option(value='Security') Security
+            option(value='Multi-agent systems') Multi-agent systems
+        br
+        input#account(type='submit', value='Submit')
+        
+
+
+
+        footer
+            | © Utrecht University 2020

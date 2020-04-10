@@ -28,4 +28,11 @@ router.get('/info', (req, res, next) => {
 router.get('/schedule', (req, res, next) => {
   res.render('schedule');
 });
+
+//
+//GET
+router.get('/account', (req, res, next) => {
+  res.render('account');
+});
+
 module.exports = router;

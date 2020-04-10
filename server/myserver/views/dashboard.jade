@@ -29,17 +29,27 @@ html(lang='en')
                     li
                         a(href='courses') Courses
 
-
-
         p
         section.navbar
-            button.link(onclick='clickMe()') Registered Courses
-            button.link(onclick='clickMe()') Account
-            button.link(onclick='clickMe()') Logout
+            button.link(onclick='registrations();') Registered Courses
+            button.link(onclick='userInfo();') Account
+            button.link(onclick='logout();') Logout
 
             script.
-                function clickMe() {
-                    alert('Are you sure you want to log out ?')
+                function logout() {
+                    console.log("YOOOOO");
+                    const Http = new XMLHttpRequest();
+
+                    const url='http://localhost:3000/dashboard/logout';
+                    Http.open("GET", url);
+                    Http.send();
+ 
+                    Http.onreadystatechange = function(){
+                    if(this.readyState==4 && this.status==200){
+                      window.location.href ='http://localhost:3000/login';  
+                      console.log(this.response);           
+                      }
+                     }
                 }
 
 

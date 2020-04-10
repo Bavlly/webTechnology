@@ -3,6 +3,14 @@ const databaseConnection = require('./database');
 const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
+var app = express();
+var session = require('express-session'); // new
+
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
@@ -35,20 +43,9 @@ const sqlite3 = require('sqlite3').verbose();
 // //     db.close();
 //
 // //GET
-//     let sql = "SELECT * FROM Users";
-//     db.all(sql, [], (err, rows) => {
-//         if (err) {
-//             throw err;
-//         }
-//         res.render('login', { Users: rows})
-//     });
-//
-//     // close the database connection
-//     db.close();
-//     console.log("In Login!");
-// });
 
-router.post('/', function (req, res) {
+
+router.post('/registration', function (req, res) {
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
             console.log("CANNOT CONNECT!!!!!!!!!!");
@@ -77,5 +74,34 @@ router.post('/', function (req, res) {
 
 });
 
+
+router.post('/login', function(req, res){
+    let db = new sqlite3.Database('./db.sqlite3', (err) => {
+        if (err) {
+            console.log("CANNOT CONNECT!!!!!!!!!!");
+            return console.error(err.message);
+        }
+
+    var b = req.body;
+    
+    let user = String(b.Student_Id);
+    let pass = String(b.Password);
+
+    if (user && pass) {
+        let sql = 'SELECT * FROM Users WHERE Student_Id = "' + user + '" AND Password = "' + pass+ '"';
+        console.log(sql);
+		db.all(sql, [], function(error, rows,) {
+			if (rows.length > 0) {
+				req.session.loggedin = true;
+				req.session.username = user;
+                res.redirect('/dashboard');
+                console.log("logged in");
+			} else {                
+                res.redirect('/login');      
+                console.log("oh nee toch waarom gaat alles fout als je blieft god help");
+			}			
+        });
+     }});
+});
 module.exports = router;
 

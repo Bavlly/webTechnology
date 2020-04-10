@@ -31,7 +31,8 @@ html(lang='en')
 
         section.left-side
         //register
-        form(action='/login'  method='POST')
+        form(action='/login/registration'  method='POST')
+
             section.left-side
                 h1 Register
                 p Student ID:
@@ -59,7 +60,7 @@ html(lang='en')
 
         //Login
         section.right-side
-            form(action='/login'  method='POST')
+            form(action='/login/login'  method='POST')
                 h1 Login
                 p Student ID:
                 input(type='text', name='Student_Id', placeholder='123456')
