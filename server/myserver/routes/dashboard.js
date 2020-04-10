@@ -7,6 +7,7 @@ const sqlite3 = require('sqlite3').verbose();
 router.get('/logout', function(req, res, next) {
     if (req.session) {
       // delete session object
+      console.log(req.session);
       req.session.destroy(function(err) {
         if(err) {
           return next(err);
@@ -19,7 +20,9 @@ router.get('/logout', function(req, res, next) {
   });
 
 router.get('/', function(req, res, next) {
-    if(req.session){
+    console.log(req.session);
+    console.log(req.session.cookie.maxAge);
+    if(req.session.loggedin){
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
             console.log("CANNOT CONNECT!!!!!!!!!!");
@@ -44,9 +47,8 @@ router.get('/', function(req, res, next) {
 else res.redirect('/login');
 });
 
-
 router.post('/', function (req, res) {
-    if(req.session){
+    if(req.session.loggedin){
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
             console.log("CANNOT CONNECT!!!!!!!!!!");

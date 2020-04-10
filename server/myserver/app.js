@@ -22,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(cookieParser());
-app.use(session({secret:'secretkey',saveUninitialized:false, resave: true,cookie:{maxAge:6000}}));
+app.use(session({secret:'secretkey',saveUninitialized:true, resave: true,cookie:{maxAge:6000}}));
 
 
 app.use(logger('dev'));

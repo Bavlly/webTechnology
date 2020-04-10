@@ -4,13 +4,13 @@ const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 var app = express();
-var session = require('express-session'); // new
+//var session = require('express-session'); // new
 
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
+// app.use(session({
+// 	secret: 'secret',
+// 	resave: true,
+// 	saveUninitialized: true
+// }));
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
