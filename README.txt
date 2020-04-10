@@ -20,7 +20,8 @@ Brief explanation of our web-site, and the structure or our application:
 Our web-site shows all the courses that are taught at Utrecht University to all users of the website, providing information about
 all those courses, the user can log in to the system, enabling them to enroll or un-enroll for courses.
 There is also an option for new users to register themselves to the system, enabling future logins.
-A user is not allowed to change their academic level or which program they are following, this information will be set at the
+A user is allowed to change his or her firstname, lastname, email and password, however he or she is not allowed 
+to change their student id, academic level or which program they are following, this information will be set at the
 registration of a user and cannot be changed manually by the user.
 
 .
@@ -43,13 +44,12 @@ registration of a user and cannot be changed manually by the user.
 ├── package-lock.json
 └── README.txt
 
-//the structure of our database (?)
 -----------------------------------
 
 Logins and passwords of all registered users:
 
 username:       password:
-123456          admin admin
+123456          admin
 --------------
 
 SQL definition of our database:

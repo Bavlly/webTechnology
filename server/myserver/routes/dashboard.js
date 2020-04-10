@@ -3,10 +3,8 @@ const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 
-/* GET home page. */
 router.get('/logout', function(req, res, next) {
     if (req.session) {
-      // delete session object
       req.session.destroy(function(err) {
         if(err) {
           return next(err);
@@ -25,7 +23,6 @@ router.get('/', function(req, res, next) {
         }
     });
 
-//GET
     let sql = "SELECT * FROM Courses";
     db.all(sql, [], (err, rows) => {
         if (err) {
@@ -34,7 +31,6 @@ router.get('/', function(req, res, next) {
         res.render('dashboard', { course: rows})
     });
 
-    // close the database connection
     db.close();
 }
 else res.redirect('/login');
@@ -57,10 +53,8 @@ router.post('/', function (req, res) {
                 String(b.Password)],
             function (err, row) {
                 if (err) {
-                    // req.session.create = -1;
                     res.redirect(req.get('referer'));
                 } else {
-                    // req.session.create = 1;
                     res.redirect(req.get('referer'));
                 }
             });

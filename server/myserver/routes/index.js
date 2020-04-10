@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 
-//GET
+
 router.get('/', (req, res, next) => {
   res.render('index');
 });
@@ -46,10 +46,8 @@ router.post('/coursePlus', (req, res, next) => {
       ],
     function (err, row) {
     if (err) {
-        // req.session.create = -1;
         res.redirect(req.get('referer'));
     } else {
-        // req.session.create = 1;
         res.redirect(req.get('referer'));
     }  
   });
@@ -74,14 +72,14 @@ router.get('/registeredCourses', (req, res, next) => {
 });
 
 
-//GET
+
 router.get('/account', (req, res, next) => {
-  //db connect
+  
   let db = new sqlite3.Database('./db.sqlite3', (err) => {
   if (err) {
       return console.error(err.message);
   }
-  //search op req.session.username
+ 
   });
   var userid = req.session.username;
   sql = "SELECT* FROM Users WHERE Student_Id ='" + userid + "'";
@@ -119,14 +117,12 @@ router.get('/account', (req, res, next) => {
            
             db.run(update , [], function(err, row) {
                 if (err) {
-                    // req.session.create = -1;
                     res.redirect(req.get('referer'));
                 } else {
-                    // req.session.create = 1;
                     res.redirect(req.get('referer'));
                 }
             });
-            // res.render('dashboard', {user: String})
+
       } else {
           res.redirect('/account');
       }

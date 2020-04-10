@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
     if (err) {
@@ -11,7 +10,6 @@ router.get('/', function(req, res, next) {
     }
 });
 
-//GET
     var search = req.query.search ? req.query.search : null;
     var level = req.query.level ? req.query.level : null;
     var program = req.query.program ? req.query.program : null;
@@ -42,8 +40,6 @@ router.get('/', function(req, res, next) {
         res.json(rows);
         }
     });
-
-    // close the database connection
     db.close();
 });
 
