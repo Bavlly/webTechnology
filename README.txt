@@ -12,12 +12,16 @@ Carlo Kottier - 6601227
 -----------------------
 
 Direct link to the location of the website:
-//insert link here
+http://webtech.science.uu.nl/group42/
 ------------------
 
 Brief explanation of our web-site, and the structure or our application:
 
-//brief explanation of our web-site
+Our web-site shows all the courses that are taught at Utrecht University to all users of the website, providing information about
+all those courses, the user can log in to the system, enabling them to enroll or un-enroll for courses.
+There is also an option for new users to register themselves to the system, enabling future logins.
+A user is not allowed to change their academic level or which program they are following, this information will be set at the
+registration of a user and cannot be changed manually by the user.
 
 .
 ├── resources
@@ -44,7 +48,8 @@ Brief explanation of our web-site, and the structure or our application:
 
 Logins and passwords of all registered users:
 
-//insert this
+username:       password:
+123456          admin admin
 --------------
 
 SQL definition of our database:

@@ -7,12 +7,10 @@ const sqlite3 = require('sqlite3').verbose();
 router.get('/logout', function(req, res, next) {
     if (req.session) {
       // delete session object
-     
       req.session.destroy(function(err) {
         if(err) {
           return next(err);
         } else {
-          console.log("Destroyed");
           res.redirect('/');
         }
       });
@@ -20,15 +18,11 @@ router.get('/logout', function(req, res, next) {
   });
 
 router.get('/', function(req, res, next) {
-   
-    
     if(req.session.loggedin){
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
-            console.log("CANNOT CONNECT!!!!!!!!!!");
             return console.error(err.message);
         }
-        console.log('Connected to the SQlite database.');
     });
 
 //GET
@@ -42,7 +36,6 @@ router.get('/', function(req, res, next) {
 
     // close the database connection
     db.close();
-    console.log("In dashboard!");
 }
 else res.redirect('/login');
 });
@@ -51,7 +44,6 @@ router.post('/', function (req, res) {
     if(req.session.loggedin){
     let db = new sqlite3.Database('./db.sqlite3', (err) => {
         if (err) {
-            console.log("CANNOT CONNECT!!!!!!!!!!");
             return console.error(err.message);
         }
         var b = req.body;

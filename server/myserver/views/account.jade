@@ -37,7 +37,6 @@ html(lang='en')
 
             script.
                 function logout() {
-                    console.log("YOOOOO");
                     const Http = new XMLHttpRequest();
 
                     const url = 'http://localhost:3000/dashboard/logout';
@@ -47,7 +46,6 @@ html(lang='en')
                     Http.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
                             window.location.href = 'http://localhost:3000/login';
-                            console.log(this.response);
                         }
                     }
                 }

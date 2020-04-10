@@ -48,7 +48,6 @@ app.get('/login', function (req, res) {
 });
 
 app.post('/login', function(req, res){
-  console.log(req.body);
   res.send("received your request!");
 });
 
