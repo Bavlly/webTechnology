@@ -122,11 +122,11 @@ router.get('/account', (req, res, next) => {
 
         if (update.length > 17) { 
             update = update.slice(0, -2);
-            update += "WHERE Student_Id =" + req.session.username;
+            update += "WHERE Student_Id=" + req.session.username;
            
             console.log(req.session)
             console.log(update);
-            db.run(sql , [], function(err, row) {
+            db.run(update , [], function(err, row) {
                 if (err) {
                     // req.session.create = -1;
                     res.redirect(req.get('referer'));
