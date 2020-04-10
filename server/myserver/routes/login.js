@@ -39,12 +39,12 @@ router.get('/', function(req, res, next) {
         if (err) {
             throw err;
         }
-        res.render('login_form', { Users: rows})
+        res.render('login', { Users: rows})
     });
 
     // close the database connection
     db.close();
-    console.log("In COURSES!");
+    console.log("In Login!");
 });
 
 router.post('/', function (req, res) {
@@ -70,7 +70,7 @@ router.post('/', function (req, res) {
                 // req.session.create = 1;
                 res.redirect(req.get('referer'));
             }
-            res.render('dashboard', {user: String})
+            // res.render('dashboard', {user: String})
         });
     });
 

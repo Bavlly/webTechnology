@@ -9,11 +9,11 @@ const sqlite3 = require('sqlite3').verbose();
 // var indexRouter = require('./routes/index');
 var indexRouter = require('./routes/index'); //homepage
 // var usersRouter = require('./routes/users');
-var assignmentsRouter = require('./routes/assignments');
-var concurrencyRouter = require('./routes/concurrency');
-var descriptionRouter = require('./routes/description');
-var infoRouter = require('./routes/info');
-var scheduleRouter = require('./routes/schedule');
+// var assignmentsRouter = require('./routes/assignments');
+// var concurrencyRouter = require('./routes/concurrency');
+// var descriptionRouter = require('./routes/description');
+// var infoRouter = require('./routes/info');
+// var scheduleRouter = require('./routes/schedule');
 var coursesRouter = require('./routes/courses');
 var loginRouter = require('./routes/login');
 var dashboardRouter = require('./routes/dashboard');
@@ -33,20 +33,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-app.use('/assignments', assignmentsRouter);
-app.use('/concurrency', concurrencyRouter);
-app.use('/description', descriptionRouter);
-app.use('/info', infoRouter);
-app.use('/schedule', scheduleRouter);
+// app.use('/assignments', assignmentsRouter);
+// app.use('/concurrency', concurrencyRouter);
+// app.use('/description', descriptionRouter);
+// app.use('/info', infoRouter);
+// app.use('/schedule', scheduleRouter);
 app.use('/courses', coursesRouter);
-app.use('/login_form', loginRouter);
+app.use('/login', loginRouter);
 app.use('/dashboard', dashboardRouter);
 
-app.get('/login_form', function (req, res) {
-  res.render('login_form')
+app.get('/login', function (req, res) {
+  res.render('login')
 });
 
-app.post('/login_form', function(req, res){
+app.post('/login', function(req, res){
   console.log(req.body);
   res.send("received your request!");
 });
