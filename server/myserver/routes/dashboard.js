@@ -44,7 +44,7 @@ router.get('/', function(req, res, next) {
 
     // close the database connection
     db.close();
-    console.log("In COURSES!");
+    console.log("In dashboard!");
 });
 
 router.post('/', function (req, res) {

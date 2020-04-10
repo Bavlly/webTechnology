@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
     console.log(search);
     
      let where = " WHERE ";
-    console.log(semester !== null)
+    console.log(semester !== null);
      if(semester != "any" &&  semester !== null)
        where+= "Semester = " + semester+ " AND " ;
      if(level != "any" && level !== null)
