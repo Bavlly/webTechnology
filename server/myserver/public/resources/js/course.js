@@ -32,10 +32,10 @@ function buildTable(courses){
     let thead = create("thead");
     let tbody = create("tbody");
 
-    addTR(thead,"th",["Code","Title","Program","Academic Level","Semester","Description","Teacher","Picture"]);
+    addTR(thead,"th",["Code","Title","Program","Academic Level","Semester","Description","Teacher"]);
     for(let course of courses){
         //var
-        addTR(tbody,"td", [course.Code, course.Title, course.Program,course.Academic_level,course.Semester,course.Description,course.Teacher,course.Picture]);
+        addTR(tbody,"td", [course.Code, course.Title, course.Program,course.Academic_level,course.Semester,course.Description,course.Teacher]);
     }
 
     append(table,thead)

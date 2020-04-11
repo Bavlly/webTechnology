@@ -31,8 +31,8 @@ html(lang='en')
 
         p
         section.navbar
-            button.link(onclick="location.href='http://localhost:3000/RegisteredCourses'") Registered Courses
-            button.link(onclick= "location.href='http://localhost:3000/Account'") Account
+            button.link(onclick="location.href='https://osiris.uu.nl/osiris_student_uuprd/StartPagina.do '") OSIRIS
+            button.link(onclick= "location.href='http://localhost:3000/account'") Account
             button.link(onclick='logout();') Logout
 
             script.
@@ -98,7 +98,8 @@ html(lang='en')
                             button#add add course
                             button#remove delete course
 
+        script(src='resources/js/course.js')
+        script(src='resources/js/RegisteredCourses.js')
 
-     script(src='resources/js/RegisteredCourses.js')
         footer
             | © Utrecht University 2020

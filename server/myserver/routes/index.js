@@ -16,6 +16,10 @@ router.get('/concurrency', (req, res, next) => {
   res.render('concurrency');
 });
 
+router.get('/login', (req, res, next) => {
+  res.render('login');
+});
+
 router.get('/assignments', (req, res, next) => {
   res.render('assignments');
 });
